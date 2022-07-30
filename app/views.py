@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 #Admin Section
 
+def admin_dashboard(request):
+    return render(request,'Admin_Dasbord.html')
 
 
 #Home Section
