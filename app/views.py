@@ -11,7 +11,7 @@ def admin_dashboard(request):
 #Home Section
 
 def load_index(request):
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def load_about(request):
     return render(request,'about.html')
