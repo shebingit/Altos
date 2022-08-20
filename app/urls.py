@@ -11,9 +11,9 @@ urlpatterns =[
     path('admin_dashboard',views.admin_dashboard,name='admin_dashboard'),
     
     path('',views.load_index,name='load_index'),
-    path('load_about',views.load_about,name='load_about'),
-    path('load_course',views.load_course,name='load_course'),
-    path('load_contact',views.load_contact,name='load_contact'),
+    path('enquery_send',views.enquery_send,name='enquery_send'),
+   
+    
 
 
 
