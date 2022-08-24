@@ -1,81 +1,9 @@
+{% extends 'User/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <title>ALTOS</title>
-</head>
-
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
 
 
-    <!-- TOP NAV -->
-    <!-- <div class="top-nav" id="home">
-        <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-auto">
-                    <p> <i class='bx bxs-envelope'></i> debra.holt@example.com</p>
-                    <p> <i class='bx bxs-phone-call'></i> (219) 555-0114</p>
-                </div>
-                <div class="col-auto social-icons">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-pinterest'></i></a>
-                </div>
-            </div>
-        </div>
-    </div> -->
+{% block content %}
 
-    <!-- BOTTOM NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="static/img/logo.png" alt="" sty><span class="dot"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Why Us</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#blog">Courses</a>
-                    </li> -->
-                    
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reviews">Reviews</a>
-                    </li> -->
-                    
-                </ul>
-                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3" style="background-color:#000; border:none">Contact</a>
-            </div>
-        </div>
-    </nav>
 
     <!-- SLIDER -->
     <div class="owl-carousel owl-theme hero-slider" id="home">
@@ -83,8 +11,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center text-white">
-                        <h2 class="text-white text-uppercase">ALTOS</h2>
-                        <h1 class="display-3 my-4">Career Excellence in Every Corner</h1>
+                        <h2 class="text-white text-uppercase">ALTOS </h2>
+                        <h1 class="display-3 my-4">The world is changing with technology</h1>
                         <!-- <a href="#" class="btn btn-brand">Login</a>
                         <a href="#" class="btn btn-outline-light ms-3">SignUp</a> -->
                     </div>
@@ -95,8 +23,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-10 offset-lg-1 text-white">
-                        <h2 class="text-white text-uppercase">ALTOS</h2>
-                        <h1 class="display-3 my-4">Career Excellence in Every Corner</h1>
+                        <h2 class="text-white text-uppercase">ALTOS </h2>
+                        <h1 class="display-3 my-4">We Provide The Tech For You</h1>
                         <!-- <a href="#" class="btn btn-brand">Login</a>
                         <a href="#" class="btn btn-outline-light ms-3">SignUp</a> -->
                     </div>
@@ -115,58 +43,71 @@
                     <div class="intro">
                         <!-- <h6>Our Services</h6> -->
                         <h1>About Us</h1>
-                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                        <!-- <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p> -->
                     </div>
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-lg-5 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service">
                         <div class="card img-top">
-                            <div class="card-body">
-                                <img src="static/img/icon1.png" alt="">
+                            <div class="card-body overflow-auto">
+                                <!-- <img src="static/img/icon1.png" alt=""> -->
                                 <!-- <h5>On the Job Training</h5> -->
-                                <p>Having theoretical knowledge is not enough to sustain a newcomer
-                                     in the industry. It is essential for students to accomplish real-world 
-                                     experience before they are hired to work in their fields on real projects in a real environment.
+                                <p><b>ALTOS</b> Technologies is a leading Software and Web development company based in Kochi, Kerala. 
+                                    With the latest technology and framework, we continuously strive to improve ideas as a 
+                                    team of young, innovative thinkers. We are located in the IT hub of Kerala, Infopark Kochi, 
+                                    and have been helping businesses and individuals realize their full potential for years 
+                                    with our expertise in Software, Web development, Mobile application development, 
+                                    3D modelling, Game development etc. We are also providing On-the-Job training to 
+                                    students with the knowledge we have gained over the past few years in order for them to 
+                                    build a great career under professionals of multinational companies.
                                 </p>
+                                <p>
+                                    Having theoretical knowledge is not enough to sustain a newcomer in the industry. 
+                                    It is essential for students to accomplish real-world experience before they are hired 
+                                    to work in their fields on real projects in a real environment.
+                                </p>
+                                
+                                
                             </div>
                         </div>  
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service">
                         <div class="card img-top">
-                            <div class="card-body">
+                            <div class="card-body overflow-auto">
                                 <!-- <img src="static/img/icon2.png" alt="">
                                 <h5>Live Project Experience</h5> -->
-                                <p>A company internship from ALTOS provides students with valuable insight 
-                                    into the way a company or industry operate in real-time situations. Moreover, 
-                                    the supervision of working professionals from the MNC companies will allow students 
+                                <p>
+                                    A company internship from  <b> ALTOS </b>  provides students with valuable insight into 
+                                    the way a company or industry operate in real-time situations. Moreover, the 
+                                    supervision of working professionals from the MNC companies will allow students 
                                     to work with mentors who help them improve their skills and monitor their performance. 
                                     During an internship with our company, students learn more about a specific topic while 
-                                    also bridging the gap between employers' job requirements and academics. They are prepared 
-                                    for the challenges of a full-time position within any organization, providing more insight 
-                                    into the specific topic. 
+                                    also bridging the gap between employers' job requirements and academics. 
+                                    They are prepared for the challenges of a full-time position within any organization, 
+                                    providing more insight into the specific topic. 
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="service">
                         <div class="card img-top">
-                            <div class="card-body">
-                                <img src="static/img/icon3.png" alt="">
+                            <div class="card-body overflow-auto">
+                                <!-- <img src="static/img/icon3.png" alt=""> -->
                                 <!-- <h5>Expert Trainers</h5> -->
-                                <p>It has become a requirement for even entry-level jobs to have some industry experience in today's 
-                                    world. Employers can be convinced that a candidate is an asset to their company if they see they 
-                                    have made the best use of their time learning and building skills, as it allows them to cope with 
-                                    the new environment quickly and to establish connections with industry leaders and professionals 
-                                    without delay. Upon gaining appropriate experience, students can not only list the duties and tasks 
-                                    that they performed, but also describe them in a thoughtful, honest, and specific manner to 
-                                    interviewers.
+                                <p>
+                                    It has become a requirement for even entry-level jobs to have some industry experience in today's world. 
+                                    Employers can be convinced that a candidate is an asset to their company if they see they have made the 
+                                    best use of their time learning and building skills, as it allows them to cope with the new environment 
+                                    quickly and to establish connections with industry leaders and professionals without delay. Upon gaining 
+                                    appropriate experience, students can not only list the duties and tasks that they performed, but also 
+                                    describe them in a thoughtful, honest, and specific manner to interviewers.
                                 </p>
                             </div>
                         </div>
@@ -191,9 +132,9 @@
                         <!-- <small>Market Development Manager</small> -->
                     </div>
                     <p>Understanding the requirements of the new job in the most convenient way. 
-                        In addition to getting hands-on experience with new technologies, machinery,
-                        equipment, tools, materials, etc, and facing the challenges that might arise 
-                        during their work, they also get the chance to learn and improve.
+                        In addition to getting hands-on experience with new technologies, machinery, 
+                        equipment, tools, materials, etc, and facing the challenges that might arise during 
+                        their work, they also get the chance to learn and improve.
                     </p>
                     <!-- <div class="stars">
                         <i class='bx bxs-star'></i>
@@ -211,9 +152,9 @@
                         <!-- <small>Market Development Manager</small> -->
                     </div>
                     <p>It's always best to focus on learning new things whenever possible. 
-                        Your internship/live project gives you the opportunity to find out 
-                        what's good and what's not. As far as improving your skills professionally 
-                        is concerned, we will look at how to do so.
+                        Your internship/live project gives you the opportunity to find out what's 
+                        good and what's not. As far as improving your skills professionally is 
+                        concerned, we will look at how to do so.
                     </p>
                     <!-- <div class="stars">
                         <i class='bx bxs-star'></i>
@@ -230,9 +171,8 @@
                         <h5>Expert Trainers</h5>
                         <!-- <small>Market Development Manager</small> -->
                     </div>
-                    <p>Our team of experienced professionals comes from MNC companies 
-                        across every industry. They are dedicated and experienced in implementing, 
-                        utilizing and enhancing the candidates' skills.
+                    <p>Our team of experienced professionals comes from MNC companies across every industry. 
+                        They are dedicated and experienced in implementing, utilizing and enhancing the candidates' skills.
                     </p>
                     
                     <!-- <div class="stars">
@@ -250,9 +190,8 @@
                         <h5>Most Updated Curriculum</h5>
                         <!-- <small>Market Development Manager</small> -->
                     </div>
-                    <p>To help them hone the skills needed to succeed in their 
-                        chosen field, we regularly update the most demanding 
-                        syllabuses and the revised curriculum.
+                    <p>To help them hone the skills needed to succeed in their chosen field, 
+                        we regularly update the most demanding syllabuses and the revised curriculum.
                     </p>
                     
                     <!-- <div class="stars">
@@ -358,263 +297,7 @@
         </div>
     </section>
     
-    <section id="blog" style="padding-top:10px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro">
-                        <!-- <h6>Courses</h6> -->
-                        <h1>We are Working Different Platforms</h1>
-                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-2">
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project5.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>PYTHON</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project4.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>ANGULAR</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>ACCOUNTING</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>FLUTTER</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>NODE JS</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>FLUTTER</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>3D MODELING</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>GAME DEVELOPMENT</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>IOS DEVELOPMENT</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>XAMARIN DEVELOPMENT</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>DATA SCIENCE</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>DEEP LEARNING</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>REACT</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>.NET</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>PHP</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>DIGITAL MARKETING</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>AUGMENTED REALITY</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>CYBER SECURITY</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>ANDROID DEVELOPMENT</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-4">
-                    <article class="blog-post">
-                        <img src="static/img/project2.jpg" alt="">
-                        <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                        <div class="content">
-                            <!-- <small>01 Dec, 2022</small> -->
-                            <h5>MACHINE LEARNING</h5>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece of classical Latin literature from</p>
-                        </div>
-                    </article>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+    
 
 
     <!-- ABOUT -->
@@ -627,50 +310,97 @@
 
                         <div class="col-12">
                             <div class="info-box">
-                                <img src="static/img/icon6.png" alt="">
+                                <img src="static/img/interview.jpg" alt="">
                                 <div class="ms-4">
                                     <h5>Interview preparation</h5>
-                                    <p>Ensures that you are prepared to ace the interview. 
-                                        As part of our interview preparation, we work on your 
-                                        presentation skills, body language, and other factors 
-                                        that help you land that dream job. </p>
+                                    <p>Ensures that you are prepared to ace the interview. As part of our interview preparation, 
+                                        we work on your presentation skills, body language, and other factors that help you land that dream job. 
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 mt-4">
                             <div class="info-box">
-                                <img src="static/img/icon4.png" alt="">
+                                <img src="static/img/language.jpg" alt="">
                                 <div class="ms-4">
                                     <h5>Language improvements</h5>
-                                    <p>Writing, speaking, and reading are only a few ways to communicate.
-                                         As well as having an appreciation for other cultures, it is also 
-                                         important to have an understanding and appreciation for different 
-                                         business methods. Business or personal connections can be built 
-                                         more effectively with good language skills. </p>
+                                    <p>Writing, speaking, and reading are only a few ways to communicate. As well as having an 
+                                        appreciation for other cultures, it is also important to have an understanding and 
+                                        appreciation for different business methods. Business or personal connections can be 
+                                        built more effectively with good language skills. 
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 mt-4">
                             <div class="info-box">
-                                <img src="static/img/icon5.png" alt="">
+                                <img src="static/img/PD.jpg" alt="">
                                 <div class="ms-4">
                                     <h5>Personality development</h5>
-                                    <p>Personality refinement aims to polish and refine an individual's traits. 
-                                        Enhances a person's strength and minimizes his or her weaknesses by using it 
-                                        wisely and properly. It makes you feel good, gives you a positive outlook on 
-                                        life and creates a feeling of positivity within you. </p>
+                                    <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
+                                        his or her weaknesses by using it wisely and properly. 
+                                        It makes you feel good, gives you a positive outlook on life and creates a feeling of positivity within you. 
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <img src="static/img/about.png" alt="">
+                    <img src="static/img/tech1.jpg" alt="">
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="blog" class="clients_logo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        <!-- <h6>Our Services</h6> -->
+                        <h1>Our Clients</h1>
+                        <!-- <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p> -->
+                    </div>
+                </div>
+            </div>
+            <div class=" clients row g-3">
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l1.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l2.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l11.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l4.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l5.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l6.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l7.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l8.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2">
+                    <img src="static/img/l9.png">
+                </div>
+                <div class="col-lg-3 col-md4 col-sm-2 mb-3">
+                    <img src="static/img/l10.png">
+                </div>
+                
+            </div>
+        </div>
+        
+    </section>
     <!-- MILESTONE -->
     <!-- <section id="milestone">
         <div class="container">
@@ -705,12 +435,14 @@
                     <h5>Our Mission</h5>
                     <!-- <small>Market Development Manager</small> -->
                 </div>
-                <p>Our goal is to make a candidate's life more professional. Our passion 
-                    for commitment and the work we perform enable us to both develop and bring 
-                    out the best in individuals. We totally commit to spending time with each of 
-                    our applicants, to help them understand how to live out their goals using our 
-                    tested methodologies, and to place them at the top multinational corporations 
-                    around the globe.</p>
+                <p>Providing excellence and enterprise compliance through innovative software 
+                    solutions is our mission. Our goal is to make a candidate's life more professional. 
+                    Our passion for commitment and the work we perform enable us to both develop and 
+                    bring out the best in individuals. We totally commit to spending time with each of 
+                    our applicants, to help them understand how to live out their goals using our tested 
+                    methodologies, and to place them at the top multinational corporations around the globe.
+
+                </p>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
                     <i class='bx bxs-star'></i>
@@ -726,10 +458,11 @@
                     <h5>Our Vision</h5>
                     <!-- <small>Market Development Manager</small> -->
                 </div>
-                <p>For each student, we aim to provide industry-based training that will 
-                    prepare them to lead the world. Providing them with a practical and 
-                    interactive live environment and excellent training allows them to 
-                    achieve their dream careers. 
+                <p>We aim to become the first choice for businesses when it comes to Web and Software development. 
+                    It is our goal to exceed the expectations of our clients in order to achieve this. For each student,
+                     we aim to provide industry-based training that will prepare them to lead the world. Providing them 
+                     with a practical and interactive live environment and excellent training allows them to achieve their dream careers. 
+
                 </p>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
@@ -746,18 +479,16 @@
                     <h5>How ALTOS powers your Resume</h5>
                     <!-- <small>Market Development Manager</small> -->
                 </div>
-                <p>Your Resume showcases your skills, experience, and accomplishments. 
-                    It is unlikely that you will be hired if you do not possess what the 
-                    employer wants. Building your resume through our company internship is 
-                    one way of the proven method. As well as the professional references you 
-                    provide, employers will pay special attention to the skills and experience 
-                    you gained from your internship. In addition to gaining work samples through 
-                    this period, you will also be able to use them when applying for jobs.
+                <p>Your Resume showcases your skills, experience, and accomplishments. It is unlikely that you will be hired 
+                    if you do not possess what the employer wants. Building your resume through our company internship is one 
+                    way of the proven method. As well as the professional references you provide, employers will pay special 
+                    attention to the skills and experience you gained from your internship. 
+                    In addition to gaining work samples through this period, you will also be able to use them when applying for jobs.
                 </p>
                 <p>
-                    Training skills acquired from ALTOS, through 3 month live on-the-job training will 
-                    always prove that you know how to communicate your ideas and how effectively you can 
-                    make them useful in the industry. Making you an ideal candidate for the job role. 
+                    Training skills acquired from ALTOS, through 3 month live on-the-job training will always prove that you know how 
+                    to communicate your ideas and how effectively you can make them useful in the industry. Making you an ideal candidate
+                     for the job role. 
                 </p>
                 <div class="stars">
                     <i class='bx bxs-star'></i>
@@ -787,7 +518,7 @@
         <div id="projects-slider" class="owl-theme owl-carousel">
             <div class="project">
                 <div class="overlay"></div>
-                <img src="static/img/project1.jpg" alt="">
+                <img src="static/img/python.png" alt="">
                 <div class="content">
                     <h2>Python</h2>
                     <h6></h6>
@@ -795,7 +526,7 @@
             </div>
             <div class="project">
                 <div class="overlay"></div>
-                <img src="static/img/project2.jpg" alt="">
+                <img src="static/img/react.png" alt="">
                 <div class="content">
                     <h2>React</h2>
                     <h6>
@@ -804,7 +535,7 @@
             </div>
             <div class="project">
                 <div class="overlay"></div>
-                <img src="static/img/project3.jpg" alt="">
+                <img src="static/img/angular.png" alt="">
                 <div class="content">
                     <h2>Angular JS</h2>
                     <h6></h6>
@@ -812,7 +543,7 @@
             </div>
             <div class="project">
                 <div class="overlay"></div>
-                <img src="static/img/project4.jpg" alt="">
+                <img src="static/img/account.png" alt="">
                 <div class="content">
                     <h2>Accounting</h2>
                     <h6></h6>
@@ -824,155 +555,4 @@
    
 
 
-    
-
-    
-    <footer>
-        <div class="footer-top text-center">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <h4 class="navbar-brand">ALTOS<span class="dot"></span></h4>
-                        <p>Career Excellence in Every Corner</p>
-                        <div class="col-auto social-icons">
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram'></i></a>
-                            <a href="#"><i class='bx bxl-pinterest'></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom text-center">
-            <p class="mb-0">Copyright@2020. All rights Reserved <a href="#" style="color: #fff;  text-decoration: none;">Infox</a></p>
-        </div>
-    </footer>
-
-
-    <!-- Contact Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div class="container-fluid">
-                        <div class="row gy-4">
-                            <div class="col-lg-4 col-sm-12 bg-cover"
-                                style="background-image: url(static/img/c2.jpg); min-height:300px;">
-                                <div>
-                                    
-                                </div>
-                            </div>
-                            <div class="col-lg-8">
-                                <form class="p-lg-5 col-12 row g-3">
-                                    <div>
-                                        <h1 class="mt-3">Get in touch</h1>
-                                    <p>Fell free to contact us and we will get back to you as soon as possible</p>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="userName" class="form-label">First name</label>
-                                        <input type="text" class="form-control" placeholder="Jon" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label for="userName" class="form-label">Last name</label>
-                                        <input type="text" class="form-control" placeholder="Doe" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="userName" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Johndoe@example.com" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="exampleInputEmail1" class="form-label">Enter Message</label>
-                                        <textarea name="" placeholder="This is looking great and nice." class="form-control" id=""  rows="4"></textarea>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-brand mb-3">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-     <!-- Register Modal -->
-
-     <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                
-                <div class="modal-body p-0">
-                    
-                    <div class="container-fluid">
-                        <div class="close_button text-end">
-                            <button type="button" class="btn-close p-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                      
-                        <div class="row gy-4">
-                            <!-- <div class="col-lg-4 col-sm-12 bg-cover"
-                                style="background-image: url(static/img/c2.jpg); min-height:300px;">
-                                <div>
-                                    
-                                </div>
-                            </div> -->
-                            <div class="col-lg-12">
-                                <form class="p-lg-5 col-12 row g-3" action="#" method="post">
-                                    <div>
-                                        <h1 class="mt-3">Course Apply Form</h1>
-                                    <p>Fill the the form and we will get back to you as soon as possible</p>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <label for="userName" class="form-label">First name</label>
-                                        <input type="text" class="form-control" placeholder="Jon" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    
-                                    <div class="col-12">
-                                        <label for="userName" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" placeholder="Johndoe@example.com" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="userName" class="form-label">Contact</label>
-                                        <input type="text" class="form-control" placeholder="8976549845" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="userName" class="form-label">Place</label>
-                                        <input type="text" class="form-control" placeholder="Pala" id="userName"
-                                            aria-describedby="emailHelp">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-brand mb-3">Apply</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-    <script src="{% static 'js/app.js' %}"></script>
-</body>
-
-</html>
+{% endblock %}
