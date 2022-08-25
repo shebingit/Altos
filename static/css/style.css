@@ -43,7 +43,7 @@ a:hover {
 
 section {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 50px;
 }
 
 .text-brand {
@@ -521,19 +521,19 @@ text-align: center;}
     }
     .clients_logo .col-lg-3
     {
-        height: 130px;
+        height: 150px;
     }
     #blog .clients img
     {
-        transform: scale(1);
+        transform: scale(.8);
         transition: transform 2s;
-        
+        margin-bottom: 7vh;
         margin-left: 7vh;
     }
     #blog .clients img:hover{
     
-        transform: scale(1.2);
-       box-shadow: -5px 2px 10px ; 
+        transform: scale(.9);
+        box-shadow: -2px 3px 5px rgb(237, 198, 2);
     }
 }
 
@@ -570,8 +570,9 @@ text-align: center;}
     text-decoration: underline;
 }
 
-footer {
-    background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)), url(../img/bg_banner1.jpg), #082032;;
+footer { 
+    margin-top: 4vh;
+    background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)),  #082032;;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
