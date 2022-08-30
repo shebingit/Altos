@@ -73,14 +73,14 @@
             </nav>
 
             <div class="container-fluid px-3">
-                <div class="row g-3 my-2">
+                <!-- <div class="row g-3 my-2">
                     <div class="col-md-5 text-dark bg-danger ">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
                                 <h3 class="fs-2">18</h3>
                                 <p class="fs-5">Courses</p>
                             </div>
-                            <!-- <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i> -->
+                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i> 
                         </div>
                     </div>
 
@@ -90,8 +90,8 @@
                                 <h3 class="fs-2">150</h3>
                                 <p class="fs-5">Students</p>
                             </div>
-                            <!-- <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i> -->
+                            <i
+                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i> 
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@
                                 <h3 class="fs-2">50</h3>
                                 <p class="fs-5">New Enquery</p>
                             </div>
-                            <!-- <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i> -->
+                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i> 
                         </div>
                     </div>
 
@@ -111,13 +111,13 @@
                                 <h3 class="fs-2">%25</h3>
                                 <p class="fs-5">Increase</p>
                             </div>
-                            <!-- <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i> -->
+                             <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i> 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="row my-5">
-                    <h3 class="fs-4 mb-3">New Enquery for Courses</h3>
+                <div class="row my-5 overflow-auto w-100">
+                    <h3 class="fs-4 mb-3">Courses Enquery </h3>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
                             <thead class="table-dark">
@@ -139,6 +139,37 @@
                                     <td>{{i.contact}}</td>
                                     <td>{{i.place}}</td>
                                     <td>Python</td>
+                                </tr>
+                            {% endfor %}
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row my-5 overflow-auto  w-100">
+                    <h3 class="fs-4 mb-3">Project Enquery</h3>
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover ">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col" width="50">No</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Email id</th>
+                                    <th scope="col">Contact No</th>
+                                    <th scope="col">Project</th>
+                                    <th scope="col">Message</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in pro_enquerys %}
+                                <tr>
+                                    <th scope="row">{{forloop.counter}}</th>
+                                    <td>{{i.enq_name}}</td>
+                                    <td>{{i.enq_email}}</td>
+                                    <td>{{i.enq_contact}}</td>
+                                    <td>{{i.enq_project}}</td>
+                                    <td>{{i.enq_message}}</td>
+                                    
                                 </tr>
                             {% endfor %}
                                

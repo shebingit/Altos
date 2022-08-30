@@ -42,7 +42,7 @@ a:hover {
 }
 
 section {
-    padding-top: 80px;
+    padding-top: 20px;
     padding-bottom: 50px;
 }
 
@@ -259,10 +259,7 @@ text-align: center;}
 .service .card
 {
     border: none;
-    height: 250px;
-    overflow-y: hidden;
-    
-    
+  
 }
 .service .card .card-body
 {
@@ -528,7 +525,7 @@ text-align: center;}
         transform: scale(.8);
         transition: transform 2s;
         margin-bottom: 7vh;
-        margin-left: 7vh;
+        margin-left: 5vh;
     }
     #blog .clients img:hover{
     
@@ -595,6 +592,7 @@ footer .navbar-brand {
 
 footer p {
     color: #ADB3B9;
+    
 }
 
 footer .social-icons a {
@@ -603,6 +601,17 @@ footer .social-icons a {
     font-size: 20px;
     margin-left: 4px;
     margin-right: 4px;
+}
+@media(max-width:932px)
+{
+    #footer_address
+    {
+        margin-top: 3vh;
+    }
+    #footer_address p {
+        font-size: 17px;
+
+    }
 }
 
 .loader {

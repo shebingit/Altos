@@ -29,6 +29,7 @@ urlpatterns =[
     path('training_load',views.training_load,name='training_load'),
     path('mail_send',views.mail_send,name='mail_send'),
     path('enquery_send',views.enquery_send,name='enquery_send'),
+    path('project_enquery_send',views.project_enquery_send,name='project_enquery_send'),
    
     
 

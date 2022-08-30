@@ -36,6 +36,20 @@ def enquery_send(request):
         message="Successfully Registered ."
         return render(request,'User/Training.html',{'message':message})
 
+def project_enquery_send(request):
+    fname=request.POST['pfname']
+    msgs=request.POST['msg']
+    phno=request.POST['pphno']
+    email=request.POST['pemailid']
+    project_enq=Project_Enquery(enq_name=fname,
+                    enq_email=email,
+                    enq_contact=phno,
+                    enq_project='',
+                    enq_message=msgs)
+    project_enq.save()
+    message="Thank you ! We will respond soon"
+    return render(request,'User/index.html',{'message':message})
+
 
 
 
@@ -63,8 +77,9 @@ def login(request):
                     if user.is_superuser==1:
                         
                         enquerys=Enquery.objects.all()
+                        pro_enquerys=Project_Enquery.objects.all()
                         message=None
-                        return render(request,'Admin/index.html',{'enquerys':enquerys})
+                        return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys})
                         
                     else:
                         message='Invalid username or password'
@@ -86,7 +101,8 @@ def login(request):
 @login_required(login_url="/load_login")
 def load_dashbord(request):
     enquerys=Enquery.objects.all()
-    return render(request,'Admin/index.html',{'enquerys':enquerys})
+    pro_enquerys=Project_Enquery.objects.all()
+    return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys})
 
 
 def mail_send(request):
