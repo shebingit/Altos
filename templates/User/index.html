@@ -8,13 +8,13 @@
 <style>
     .section{
         width: 100%;
-	min-height: 85vh;
+	min-height: 80vh;
 	background-color: #ddd;
     padding-bottom: 10px;
     }
     .section1{
         width: 100%;
-	min-height: 130vh;
+	min-height: 110vh;
 	background-color: #ddd;
     }
     #aboutus{
@@ -25,11 +25,11 @@
     }
     .content-section{
         float: left;
-        width: 70%;
+        width: 80%;
     }
     .image-section{
         float: right;
-        width: 30%;
+        width: 0%;
     }
     .image-section img{
         width: 100%;
@@ -213,18 +213,18 @@
 					</div>
 				</div>
 				<div class="social">
-					<a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter'></i></a>
-                            <a href="#"><i class='bx bxl-instagram'></i></a>
-                            <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                            <a href="#"><i class='bx bxl-linkedin'></i></a>
+					<a href="https://www.facebook.com/ALTOS-Technologies-100285829488811/about/?ref=page_internal"><i class='bx bxl-facebook'></i></a>
+                     <!-- <a href="#"><i class='bx bxl-twitter'></i></a> -->
+                    <a href="https://www.instagram.com/altos_technologies/"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://wa.me/+919746632202"><i class='bx bxl-whatsapp'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
 				</div>
 			</div>
 
             <style>
 
                 .container .image-section{
-                    width: 30%;
+                    width: 0%;
                     height: 100%;
                     display: flex;
                     flex-direction: column;
@@ -236,7 +236,7 @@
                   .content .image-section::before{
                     content: '';
                     position: absolute;
-                    height: 70%;
+                    height: 0%;
                     width: 2px;
                     right: -15px;
                     top: 50%;
@@ -268,29 +268,29 @@
                      margin-left: 55px;
                   }
                 }
-            </style>
+            </style> 
 
-			<div class="image-section">
+			<!-- <div class="image-section">
 				<h4>Contact Us</h4>
                 <div class="address details">
                     <i class='bx bxs-location-plus'></i>
                     <div class="topic">Address</div>
-                    <div class="text-one">Altos Technologies, Phase 1</div>
-                    <div class="text-two">Kakknad Infopark Kochi</div>
+                    <div class="text-one">1st Floor, Carnival Infopark Phase 1,</div>
+                    <div class="text-two">Kakkand Eranakulam, Kerala, India 682042</div>
                   </div>
                   <div class="phone details">
                     <i class='bx bxs-phone' ></i>
                     <div class="topic">Phone</div>
                     <div class="text-one">+91 9746632202</div>
-                    <!-- <div class="text-two">+0096 3434 5678</div> -->
+                     <div class="text-two">+0096 3434 5678</div>  
                   </div>
                   <div class="email details">
                     <i class='bx bx-envelope' ></i>
                     <div class="topic">Email</div>
-                    <div class="text-one">altostechnologies@gmail.com</div>
-                    <!-- <div class="text-two">info.codinglab@gmail.com</div> -->
+                    <div class="text-one">info@altostechnologies.in</div>
+                     <div class="text-two">info.codinglab@gmail.com</div> 
                   </div>
-			</div>
+			</div> -->
 		</div>
 	</div>
     <script>
@@ -458,7 +458,7 @@
     </style>
     <!-- ABOUT -->
     <section id="about">
-        <div class="container">
+        <div class="container p-3">
             <div class="row justify-content-center">
                 
                     <div class="row">
@@ -552,29 +552,63 @@
                 margin-bottom: 4px;
             }
         }
+        #team .container .btn
+        {
+            position: absolute;
+            top:20%;
+            left:93%;
+            transform: translate(-50%, -50%);
+            -ms-transform:translate(-50%, -50%); 
+            border-radius: 5px;
+            color: #fff;
+            background-color: rgb(246, 227, 52);
+           
+        }
+        @media(max-width:932px)
+        {
+            #team .container .btn
+            {
+                position: absolute;
+                top:88%;
+                left:78%;
+                transform: translate(-50%, -50%);
+                -ms-transform:translate(-50%, -50%); 
+                
+                width: 90px;
+                font-size: 14px;
+                border-radius: 2px;
+                margin-bottom: 2px;
+                
+
+            }  
+        }
     </style>
     <h1 class="text-center mt-3 mb-2">Our Projects</h1>
     <section id="team" >
         <div class="container">
-        
+       
             
             <div class="owl-theme owl-carousel reviews-slider container p-2" id="content"  >
                     
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">CRM</h5>
                     <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/crm.png" alt=""></a>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">ERP</h5>
                     <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/erp.png" alt=""></a> 
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">HRMS</h5>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/hrms.png" alt=""></a> 
+                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/hrms.png" alt=""></a>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button> 
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">ACCOUNTING</h5>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/account.png" alt=""></a> 
+                    <a href=""  data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/account.png" alt=""></a> 
+                    <button class="btn " data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
                 </div>
                 
                 

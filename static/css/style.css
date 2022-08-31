@@ -567,7 +567,7 @@ text-align: center;}
     text-decoration: underline;
 }
 
-footer { 
+/*footer { 
     margin-top: 4vh;
     background: linear-gradient(0deg, rgba(8, 32, 50, 0.9), rgba(8, 32, 50, 0.9)),  #082032;;
     background-size: cover;
@@ -612,7 +612,7 @@ footer .social-icons a {
         font-size: 17px;
 
     }
-}
+}*/
 
 .loader {
     min-height: 100vh;
