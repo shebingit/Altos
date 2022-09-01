@@ -5,13 +5,6 @@ from .models import *
 
 
 
-#Admin Section
-
-def admin_dashboard(request):
-    enquerys=Enquery.objects.all()
-    return render(request,'Admin/index.html',{'enquerys':enquerys})
-
-
 #Home Section
 
 def load_index(request):
@@ -103,6 +96,22 @@ def load_dashbord(request):
     enquerys=Enquery.objects.all()
     pro_enquerys=Project_Enquery.objects.all()
     return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys})
+
+def enquery_delete(request,enq_delete_id):
+    enquery=Enquery.objects.get(id=enq_delete_id)
+    enquery.delete()
+    msg="Deleted Successfuly."
+    enquerys=Enquery.objects.all()
+    pro_enquerys=Project_Enquery.objects.all()
+    return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys,'msg':msg})
+
+def projectenq_delete(request,enqproject_delete_id):
+    enquery=Project_Enquery.objects.get(id=enqproject_delete_id)
+    enquery.delete()
+    msg="Deleted Successfuly."
+    enquerys=Enquery.objects.all()
+    pro_enquerys=Project_Enquery.objects.all()
+    return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys,'msg':msg})
 
 
 def mail_send(request):

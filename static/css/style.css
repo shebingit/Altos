@@ -503,35 +503,9 @@ text-align: center;}
 #blog .clients img:hover{
     
     transform: scale(1.1);
-   box-shadow: -2px 3px 5px rgb(237, 198, 2);
+  /* box-shadow: -2px 3px 5px rgb(237, 198, 2);*/
    border-radius: 100%;
     
-}
-@media(max-width:921px)
-
-{
-    .clients_logo
-    {
-        padding-top: 20px;
-        padding-bottom: 30;
-        align-items: center;
-    }
-    .clients_logo .col-lg-3
-    {
-        height: 150px;
-    }
-    #blog .clients img
-    {
-        transform: scale(.8);
-        transition: transform 2s;
-        margin-bottom: 7vh;
-        margin-left: 5vh;
-    }
-    #blog .clients img:hover{
-    
-        transform: scale(.9);
-        box-shadow: -2px 3px 5px rgb(237, 198, 2);
-    }
 }
 
 .blog-post {

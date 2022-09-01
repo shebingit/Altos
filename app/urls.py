@@ -18,6 +18,8 @@ urlpatterns =[
 
 
     path('load_dashbord',views.load_dashbord,name='load_dashbord'),
+    path('enquery_delete/<int:enq_delete_id>',views.enquery_delete,name='enquery_delete'),
+    path('projectenq_delete/<int:enqproject_delete_id>',views.projectenq_delete,name='projectenq_delete'),
 
 
 

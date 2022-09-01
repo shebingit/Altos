@@ -3,19 +3,21 @@
 
 
 {% block content %}
-
+<head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
 
 <style>
     .section{
-        width: 100%;
-	min-height: 80vh;
-	background-color: #ddd;
+    width: 100%;
+	min-height: 100vh;
+	background-color: rgb(255, 255, 255);
     padding-bottom: 10px;
     }
     .section1{
         width: 100%;
-	min-height: 110vh;
-	background-color: #ddd;
+	min-height: 120vh;
+	background-color:rgb(255, 255, 255);
     }
     #aboutus{
         width: 100%;
@@ -24,12 +26,12 @@
         padding-top: 100px;
     }
     .content-section{
-        float: left;
-        width: 80%;
+        float: right;
+        width: 50%;
     }
     .image-section{
-        float: right;
-        width: 0%;
+        float: left;
+        width: 50%;
     }
     .image-section img{
         width: 100%;
@@ -116,7 +118,7 @@
         text-align: center;
     }
     .content-section .content .button button{
-        padding:9px 30px;
+        padding:5px 10px;
     }
     .content-section .social{
         text-align: center;
@@ -130,6 +132,34 @@
     #dots
     {
         display: block;
+    }
+    .content
+    {
+        text-align: justify;
+    }
+    #invisible-text
+    {
+        text-align: justify;  
+    }
+    #invisible-text .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3px;
+    }
+    #invisible-text .button button{
+        background-color: #3d3d3d;
+        padding:10px 20px;
+        text-decoration: none;
+        color:#fff;
+        font-size: 18px;
+        letter-spacing: 1.10px;
+        border-radius: 10px;
+
+    }
+    #invisible-text .button button:hover{
+        background-color: #a52a2a;
+        color:#fff;
     }
 </style>
 
@@ -162,15 +192,111 @@
         </div>
     </div>
 
+    <style>
+        .image-section
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .img1
+        {   
+            width:60%;
+            height: 400px;
+            background:url('static/img/bg_banner2.jpg')no-repeat center / cover ;
+            border-radius: 8px;
+            margin-top: -60px;
+        }
+        .img2
+        {   
+            width:50%;
+            height: 350px;
+            background:url('static/img/project2.jpg')no-repeat center / cover ;
+            border-radius: 8px;
+            margin-left: -100px;
+            margin-top: 80px;
+            margin-bottom: 3vh;
+        }
+        #invisible-text p {
+            margin-top:5vh;
+        }
+        /*.img3
+        {   
+            width:40%;
+            height: 300px;
+            background:url('static/img/project2.jpg')no-repeat center / cover ;
+            border-radius: 8px;
+            margin-right: 170px;
+            margin-top: 180px;
+            
+        }*/
+
+        @media  screen and (max-width:789px){
+            .image-section
+            {
+                flex-direction: column;
+            }
+            .img1
+
+            {
+                width:100%;
+                height: 300px;
+            }
+            .img2
+            {
+                width:80%;
+                margin: 0;
+                margin-top: -100px;
+                height: 200px;
+                margin-bottom: 2vh;
+            }
+            #invisible-text p {
+                margin: 0;
+            }
+            #invisible-text .button button{
+                margin-top: 2vh;
+            }
+        }
+        #about_section .line
+        {
+            height: 3px;
+          
+        }
+        #about_section .title .line
+        {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            column-gap: 1rem;
+        }
+        #about_section .title .line::before
+        {
+            content: '';
+           height: 3px;
+            background-color: rgb(237, 6, 6);
+            display: block;
+        }
+    </style>
+
     <div class="section" id="about_section">
 		<div class="container" id="aboutus">
+
+            <div class="image-section" data-aos="zoom-in-up"data-aos-delay="5000" data-aos-duration="3000">
+                <div class="img1"></div>
+                <div class="img2"></div>
+                <div class="img3"></div>
+            </div> 
 			<div class="content-section">
 				<div class="title">
-					<h1>About Us</h1>
+					<h5 class="line" style="color:rgb(208, 27, 27);">About Us</h5>
+                   
 				</div>
-				<div class="content">
+                <h3 class="mt-2 p-3" style="text-transform:none ;">Why Most People Choose<br>Our <span  style="color:rgb(208, 27, 27);">&nbsp; IT Solutions</span> </h3>
+               
+				<div class="content" style="background-color:#fff ;"data-aos="zoom-in-up"data-aos-delay="5000" data-aos-duration="3000">
 					<!-- <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3> -->
-					<p><b>ALTOS</b> Technologies is a leading Software and Web development company based in Kochi, Kerala. 
+					<p class="m-0"style="font-weight:500 ;"><b >ALTOS</b> Technologies is a leading Software and Web development company based in Kochi, Kerala. 
                         With the latest technology and framework, we continuously strive to improve ideas as a 
                         team of young, innovative thinkers. We are located in the IT hub of Kerala, Infopark Kochi, 
                         and have been helping businesses and individuals realize their full potential for years 
@@ -178,119 +304,54 @@
                         3D modelling, Game development etc. We are also providing On-the-Job training to 
                         students with the knowledge we have gained over the past few years in order for them to 
                         build a great career under professionals of multinational companies.
+                        
                     </p>
                         <p>
-                            Having theoretical knowledge is not enough to sustain a newcomer in the industry. 
+                            <i class='bx bx-right-arrow-alt'></i>  Having theoretical knowledge is not enough to sustain a newcomer in the industry. 
                             It is essential for students to accomplish real-world experience before they are hired 
                             to work in their fields on real projects in a real environment.
                         </p><span id="dots"></span>
                   
-                        <span id="invisible-text">
-                            
-                            <p>
-                                A company internship from  <b> ALTOS </b>  provides students with valuable insight into 
-                                the way a company or industry operate in real-time situations. Moreover, the 
-                                supervision of working professionals from the MNC companies will allow students 
-                                to work with mentors who help them improve their skills and monitor their performance. 
-                                During an internship with our company, students learn more about a specific topic while 
-                                also bridging the gap between employers' job requirements and academics. 
-                                They are prepared for the challenges of a full-time position within any organization, 
-                                providing more insight into the specific topic. 
-                            </p>
-                            <p>
-                                It has become a requirement for even entry-level jobs to have some industry experience in today's world. 
-                                Employers can be convinced that a candidate is an asset to their company if they see they have made the 
-                                best use of their time learning and building skills, as it allows them to cope with the new environment 
-                                quickly and to establish connections with industry leaders and professionals without delay. Upon gaining 
-                                appropriate experience, students can not only list the duties and tasks that they performed, but also 
-                                describe them in a thoughtful, honest, and specific manner to interviewers.
-                            </p>
-                        </span>
-                    
+                        
                    
 					<div class="button">
 						 <button  class="btn"  id="btn" onclick="MoreLess()">Read More</button>
 					</div>
 				</div>
-				<div class="social">
+				<!-- <div class="social">
 					<a href="https://www.facebook.com/ALTOS-Technologies-100285829488811/about/?ref=page_internal"><i class='bx bxl-facebook'></i></a>
-                     <!-- <a href="#"><i class='bx bxl-twitter'></i></a> -->
+                     < <a href="#"><i class='bx bxl-twitter'></i></a> 
                     <a href="https://www.instagram.com/altos_technologies/"><i class='bx bxl-instagram'></i></a>
                     <a href="https://wa.me/+919746632202"><i class='bx bxl-whatsapp'></i></a>
                     <a href="#"><i class='bx bxl-linkedin'></i></a>
-				</div>
+				</div> -->
 			</div>
-
-            <style>
-
-                .container .image-section{
-                    width: 0%;
-                    height: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    margin-top: 15px;
-                    position: relative;
-                  }
-                  .content .image-section::before{
-                    content: '';
-                    position: absolute;
-                    height: 0%;
-                    width: 2px;
-                    right: -15px;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background: #afafb6;
-                  }
-                  .image-section .details{
-                    margin: 14px;
-                    text-align: center;
-                  }
-                   .image-section .details i{
-                    font-size: 30px;
-                    color: #3e2093;
-                    margin-bottom: 10px;
-                  }
-                   .image-section .details .topic{
-                    font-size: 18px;
-                    font-weight: 500;
-                  }
-                   .image-section .details .text-one,
-                   .image-section .details .text-two{
-                    font-size: 16px;
-                    color: #161617;
-                  }
-                  @media (max-width: 950px) {
-                  
-                    .container .image-section{
-                     width: 75%;
-                     margin-left: 55px;
-                  }
-                }
-            </style> 
-
-			<!-- <div class="image-section">
-				<h4>Contact Us</h4>
-                <div class="address details">
-                    <i class='bx bxs-location-plus'></i>
-                    <div class="topic">Address</div>
-                    <div class="text-one">1st Floor, Carnival Infopark Phase 1,</div>
-                    <div class="text-two">Kakkand Eranakulam, Kerala, India 682042</div>
-                  </div>
-                  <div class="phone details">
-                    <i class='bx bxs-phone' ></i>
-                    <div class="topic">Phone</div>
-                    <div class="text-one">+91 9746632202</div>
-                     <div class="text-two">+0096 3434 5678</div>  
-                  </div>
-                  <div class="email details">
-                    <i class='bx bx-envelope' ></i>
-                    <div class="topic">Email</div>
-                    <div class="text-one">info@altostechnologies.in</div>
-                     <div class="text-two">info.codinglab@gmail.com</div> 
-                  </div>
-			</div> -->
+            <span id="invisible-text" >
+                    <br>        
+                <p class=""style="font-weight: 500;" >
+                    <i class='bx bx-right-arrow-alt'></i>A company internship from  <b> ALTOS </b>  provides students with valuable insight into 
+                    the way a company or industry operate in real-time situations. Moreover, the 
+                    supervision of working professionals from the MNC companies will allow students 
+                    to work with mentors who help them improve their skills and monitor their performance. 
+                    During an internship with our company, students learn more about a specific topic while 
+                    also bridging the gap between employers' job requirements and academics. 
+                    They are prepared for the challenges of a full-time position within any organization, 
+                    providing more insight into the specific topic. 
+                </p>
+                <p class=""style="font-weight: 500;" >
+                    <i class='bx bx-right-arrow-alt'></i>   It has become a requirement for even entry-level jobs to have some industry experience in today's world. 
+                    Employers can be convinced that a candidate is an asset to their company if they see they have made the 
+                    best use of their time learning and building skills, as it allows them to cope with the new environment 
+                    quickly and to establish connections with industry leaders and professionals without delay. Upon gaining 
+                    appropriate experience, students can not only list the duties and tasks that they performed, but also 
+                    describe them in a thoughtful, honest, and specific manner to interviewers.
+                </p>
+                <div class="button">
+					<button  class="btn"  id="btn1" onclick="MoreLess()">Read More</button>
+				</div>
+            </span>
+        
+            
 		</div>
 	</div>
     <script>
@@ -300,53 +361,150 @@
             var dots=document.getElementById("dots");
             var invisibletext=document.getElementById("invisible-text");
             var btntext=document.getElementById("btn");
+            var btntext1=document.getElementById("btn1");
             if(dots.style.display!="none")
             {
                 dots.style.display="none";
                 invisibletext.style.display="inline";
                 $('#aboutus').addClass('section1')
                 btntext.innerHTML="Read Less";
+                btntext1.innerHTML="Read Less";
+                btntext.style.display="none";
             }
             else {
                 $('#aboutus').removeClass('section1')
                 btntext.innerHTML="Read More";
+                btntext1.innerHTML="Read More";
                 invisibletext.style.display="none";
                 dots.style.display="block";
+                btntext.style.display="block";
               }
         }
     </script>
     
    
 
-    <!-- <section id="services" class="P-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro">
-                        <h6>Our Services</h6> 
-                        <h1>About Us</h1>
-                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
-                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p> 
-                    </div>
+    <style>
+        .counts {
+          padding: 5px 0 20px;
+        }
+        
+        .counts .count-box {
+          display: flex;
+          align-items: center;
+          padding: 30px;
+          width: 100%;
+          background: #fff;
+          box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+        }
+        
+        .counts .count-box i {
+          font-size: 42px;
+          line-height: 0;
+          margin-right: 20px;
+          color: #4154f1;
+        }
+        
+        .counts .count-box span {
+          font-size: 36px;
+          display: block;
+          font-weight: 600;
+          color: #0b198f;
+        }
+        
+        .counts .count-box p {
+          padding: 0;
+          margin: 0;
+          font-family: "Nunito", sans-serif;
+          font-size: 14px;
+        }
+        @media  screen and (max-width:789px){
+            .counts 
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .counts .count-box
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+      </style>
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container"data-aos="fade-right" data-aos-offset="100" data-aos-easing="ease-in-sine" data-aos-duration="3000">
+  
+          <div class="row gy-4">
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class='bx bx-code-alt'style="color:#ee2020;"></i>
+                <div>
+                  <span class="counter">150</span>
+                  <p>Expert Developer</p>
                 </div>
+              </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-12 col-md-6">
-                    <div class="service">
-                        <div class="card img-top">
-                            <div class="card-body ">
-                                 <img src="static/img/icon1.png" alt=""> 
-                                <h5>On the Job Training</h5> 
-                                
-                                
-                                
-                            </div>
-                        </div>  
-                    </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class='bx bxs-heart'style="color: #ee2020;" ></i>
+                <div>
+                  <span class="counter">350</span>
+                  <p>Happy Clients</p>
                 </div>
+              </div>
             </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class='bx bxs-layer-plus'style="color:#ee2020;"></i>
+                <div>
+                  <span class="counter">200</span>
+                  <p>Business Partners</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-lg-3 col-md-6">
+              <div class="count-box">
+                <i class='bx bx-trophy'style="color:#ee2020;"></i>
+                <div>
+                  <span class="counter">100</span>
+                  <p>IT Consultant</p>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
         </div>
-    </section> -->
+      </section><!-- End Counts Section -->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" ></script>
+
+      <script>
+        $(document).ready(function(){
+            $('.counter').each(function(){
+
+                $(this).prop('Counter', 0).animate({
+                    Counter : $(this).text()
+
+                },{
+                    duration : 1000,
+                    easing : 'swing',
+                    step : function(now){
+                        $(this).text(Math.ceil(now) + '+');
+                    }
+                })
+
+            });
+
+        });
+      </script>
 
     <section class="bg-light" id="portfolio">
         <div class="container">
@@ -455,23 +613,163 @@
                 margin-top: 1.5rem;
             } 
         }
+        .box-container
+        {
+            min-height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(244, 248, 248);
+            padding:10px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+        .box-container .box{
+            text-align: center;
+            margin: 2vh;
+            height: 150px;
+            width:200px;
+            position: relative;
+            z-index: 1;
+        }
+        .box-container .box::before,
+        .box-container .box::after{
+            content: '';
+            position: absolute;
+            top:20px;
+            bottom:20px;
+            left:0;
+            right:0;
+            z-index:-1;
+            clip-path: polygon(13% 0%, 87% 0%, 100%  50%, 87%  100%, 13%  100%, 0%  50%);
+            background: #2980b9;
+        }
+        .box-container .box::after{
+            content: '';
+            position: absolute;
+            top:0px;
+            bottom:0px;
+            left:10px;
+            right:10px;
+            z-index:-1;
+            clip-path: polygon(13% 0%, 87% 0%, 100%  50%, 87%  100%, 13%  100%, 0%  50%);
+            background: #fff;
+        }
+        .box-container .box i{
+            color:#999;
+            font-size: 40px;
+            padding: 15px 0;
+        }
+        .box-container .box .title
+        {
+            font-size: 17px;
+            text-transform:capitalize;
+            color:  #2980b9;
+            padding-bottom: 10px;
+        }
+        .box-container .box:nth-child(2)::before
+        {
+            background: #c0392b;
+        }
+        .box-container .box:nth-child(2) .title
+        {
+            color:#c0392b ;
+        }
+        .box-container .box:nth-child(3)::before
+        {
+            background: #f39c12;
+        }
+        .box-container .box:nth-child(3) .title
+        {
+            color:#f39c12;
+        }
+        .box-container .box:nth-child(4)::before
+        {
+            background: #16a085;
+        }
+        .box-container .box:nth-child(4) .title
+        {
+            color:#16a085 ;
+        }
+        #Morecontent .container
+        {
+           margin: 2vh auto;
+           border-radius: 10px;
+           background: rgb(244, 248, 248);
+           padding: 20px;
+          
+        }
+        #Morecontent .container p{
+            text-align: justify;
+            font-weight: 500;
+            font-size: 17px;
+            padding: 10px;
+            
+        }
+       
+        
+        @media(max-width:921px)
+        {
+            #Morecontent .container
+            {
+                margin: 5px;
+            }
+
+        }
     </style>
+
+    <section id="Morecontent">
+        <div class="container"  data-aos-offset="300">
+            <div class="box-container" data-aos="fade-up" data-aos-delay="5000" data-aos-duration="3000">
+                <div class="box">
+                    <i class='bx bx-code-alt'></i>
+                    <h3 class="title">Web Development</h3>
+                </div>
+                <div class="box">
+                    <i class='bx bx-server'></i>
+                    <h3 class="title">Web Hosting</h3>
+                </div>
+                <div class="box">
+                    <i class='bx bx-money-withdraw'></i>
+                    <h3 class="title">Digital Marketing</h3>
+                </div>
+                <div class="box">
+                    <i class='bx bx-support' ></i>
+                    <h3 class="title">24 x 7 Tech Support</h3>
+                </div>
+            </div>
+            <p data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500"><b>Altos Technologies</b> &nbsp; is a well-known software and web development company that aims to identify 
+                any gaps in your current IT infrastructure, security, or efficiencies and give a methodical 
+                approach for an immediate cure. Our world-class software and web development services are 
+                available to individuals, start-ups, small enterprises, and large corporations alike.  
+                We are pleased to report that our well-known work has thrived and assisted other businesses 
+                in achieving global recognition.
+            </p>
+            <p  data-aos="fade-down" data-aos-easing="linear"data-aos-delay="5000" data-aos-duration="3000">Every business desires a network that is responsive, secure, and reliable. Altos Technologies' 
+                personnel are always checking your solutions to ensure that you have the appropriate response 
+                and performance to support your rising business needs. Almost every interaction, from interoffice 
+                communication to project collaboration and customer experience, is influenced by the effectiveness 
+                and speed of your network. Our team provides 24/7 active IT services and support, allowing you to 
+                provide excellent service to your clients while lowering operational costs and increasing revenue.
+            </p>
+        </div>
+    </section>
     <!-- ABOUT -->
-    <section id="about">
+    <!-- <section id="about">
         <div class="container p-3">
             <div class="row justify-content-center">
                 
                     <div class="row">
-                        <!-- <h4 class="mb-4">Additional Benefits</h4> -->
+                        <h4 class="mb-4">Additional Benefits</h4> 
 
                         <div class="col-lg-3 col-md-4 col-sm-12">
                             <div class="info-box">
                                 <img src="static/img/web.png" alt="">
                                 <div class="ms-4">
                                     <h5>Web Development</h5>
-                                    <!-- <p>Ensures that you are prepared to ace the interview. As part of our interview preparation, 
+                                    <p>Ensures that you are prepared to ace the interview. As part of our interview preparation, 
                                         we work on your presentation skills, body language, and other factors that help you land that dream job. 
-                                    </p> -->
+                                    </p> 
                                 </div>
                             </div>
                         </div>
@@ -480,11 +778,11 @@
                                 <img src="static/img/webhost.png" alt="">
                                 <div class="ms-4">
                                     <h5>Web Hosting</h5>
-                                    <!-- <p>Writing, speaking, and reading are only a few ways to communicate. As well as having an 
+                                     <p>Writing, speaking, and reading are only a few ways to communicate. As well as having an 
                                         appreciation for other cultures, it is also important to have an understanding and 
                                         appreciation for different business methods. Business or personal connections can be 
                                         built more effectively with good language skills. 
-                                    </p> -->
+                                    </p> 
                                 </div>
                             </div>
                         </div>
@@ -493,10 +791,10 @@
                                 <img src="static/img/digitalmarket.png" alt="">
                                 <div class="ms-4">
                                     <h5>Digital Marketing </h5>
-                                    <!-- <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
+                                    <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
                                         his or her weaknesses by using it wisely and properly. 
                                         It makes you feel good, gives you a positive outlook on life and creates a feeling of positivity within you. 
-                                    </p> -->
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -505,22 +803,22 @@
                                 <img src="static/img/support.png" alt="">
                                 <div class="ms-4">
                                     <h5>24 x 7 Tech Support </h5>
-                                    <!-- <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
+                                     <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
                                         his or her weaknesses by using it wisely and properly. 
                                         It makes you feel good, gives you a positive outlook on life and creates a feeling of positivity within you. 
-                                    </p> -->
+                                    </p> 
                                 </div>
                             </div>
                         </div>
                         
                     </div>
             
-                <!-- <div class="col-lg-5">
+                 <div class="col-lg-5">
                     <img src="static/img/tech1.jpg" alt="">
-                </div> -->
+                </div> 
             </div>
         </div>
-    </section>
+    </section> -->
 
     <style>
         #team .container{
@@ -561,8 +859,13 @@
             -ms-transform:translate(-50%, -50%); 
             border-radius: 5px;
             color: #fff;
-            background-color: rgb(246, 227, 52);
+            
+            font-weight: 500;
+            background-color: rgb(53, 200, 53);
            
+        }
+        #team .container .btn span{
+            text-transform: capitalize;
         }
         @media(max-width:932px)
         {
@@ -570,11 +873,11 @@
             {
                 position: absolute;
                 top:88%;
-                left:78%;
+                left:50%;
                 transform: translate(-50%, -50%);
                 -ms-transform:translate(-50%, -50%); 
                 
-                width: 90px;
+               
                 font-size: 14px;
                 border-radius: 2px;
                 margin-bottom: 2px;
@@ -593,22 +896,22 @@
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">CRM</h5>
                     <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/crm.png" alt=""></a>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">ERP</h5>
                     <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/erp.png" alt=""></a> 
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">HRMS</h5>
                     <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/hrms.png" alt=""></a>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button> 
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
                 </div>
                 <div class="container p-3 text-center">
                     <h5 class="mb-4">ACCOUNTING</h5>
                     <a href=""  data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/account.png" alt=""></a> 
-                    <button class="btn " data-bs-toggle="modal" data-bs-target="#enquerymodal">Enquery</button>
+                    <button class="btn " data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
                 </div>
                 
                 
@@ -706,8 +1009,42 @@
         </div>
     </section>
     
-    
+   <style>
 
+    #blog .clientslogo
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+    #blog .clientslogo .imgbox
+    {
+        flex: 1 1 calc(20% - 10px);
+    }
+    #blog .clientslogo img{
+        width:35vh;
+        height:35vh;
+        
+        transition: transform 1s ease-in-out;
+    }
+    #blog .clientslogo img:hover{
+        transform: scale(1.1);
+    }
+    @media screen and (max-width:923px)
+    {
+        #blog .clientslogo .imgbox
+       
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1 1 calc(33% - 5px);
+        }
+     
+    }
+   </style>
+   
     <section id="blog" class="clients_logo mt-3">
         <div class="container">
             <div class="row">
@@ -720,39 +1057,42 @@
                     </div>
                 </div>
             </div>
-            <div class=" clients row g-3">
-                <div class="col-lg-3 col-md-4 col-sm-2">
+            <div class="clientslogo">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l1.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l2.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l11.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l4.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox"  data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l5.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l6.png">
                 </div>
-                <div class="col-lg-3 col-md4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l7.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l8.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l9.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2 mb-3">
+                <div class="imgbox"data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l10.png">
                 </div>
-                <div class="col-lg-3 col-md-4 col-sm-2 mb-3">
+                <div class="imgbox"data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
                     <img src="static/img/l12.png">
+                </div>
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-delay="1000">
+                    <img src="static/img/l13.png">
                 </div>
                 
             </div>
@@ -783,9 +1123,11 @@
         </div>
     </section> -->
 
-  
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
-   
+    <script>
+        AOS.init();
+    </script>
     
    
 

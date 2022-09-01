@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>ALTOS</title>
@@ -98,9 +99,10 @@
     }
     .footer-left
     {
-        margin-bottom: 1em;
-        margin-right: 1.25em;
-        padding-left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     .footer-left img{
         width: 35%;
@@ -195,9 +197,17 @@
     }
     @media(max-width:600px)
     {
-        .footer-left img{
-            margin-top: 10px;
+        .footer-left
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
+        .footer-left img{
+            margin-top: 10px; 
+        }
+        
         .footer
         {
             padding: 15px;
@@ -443,9 +453,11 @@
             </div>
         </div>
     </div>
-
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
