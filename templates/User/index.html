@@ -5,12 +5,15 @@
 {% block content %}
 <head>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
 </head>
 
 <style>
     .section{
     width: 100%;
-	min-height: 100vh;
+	min-height: 90vh;
 	background-color: rgb(255, 255, 255);
     padding-bottom: 10px;
     }
@@ -265,10 +268,12 @@
         }
         #about_section .title .line
         {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            display: flex;
+          justify-content: center;
             align-items: center;
-            column-gap: 1rem;
+            margin-top: 2vh;
+            font-size:1em;
+            
         }
         #about_section .title .line::before
         {
@@ -314,9 +319,9 @@
                   
                         
                    
-					<div class="button">
+					<!-- <div class="button">
 						 <button  class="btn"  id="btn" onclick="MoreLess()">Read More</button>
-					</div>
+					</div> -->
 				</div>
 				<!-- <div class="social">
 					<a href="https://www.facebook.com/ALTOS-Technologies-100285829488811/about/?ref=page_internal"><i class='bx bxl-facebook'></i></a>
@@ -326,30 +331,13 @@
                     <a href="#"><i class='bx bxl-linkedin'></i></a>
 				</div> -->
 			</div>
-            <span id="invisible-text" >
+            <!-- <span id="invisible-text" >
                     <br>        
-                <p class=""style="font-weight: 500;" >
-                    <i class='bx bx-right-arrow-alt'></i>A company internship from  <b> ALTOS </b>  provides students with valuable insight into 
-                    the way a company or industry operate in real-time situations. Moreover, the 
-                    supervision of working professionals from the MNC companies will allow students 
-                    to work with mentors who help them improve their skills and monitor their performance. 
-                    During an internship with our company, students learn more about a specific topic while 
-                    also bridging the gap between employers' job requirements and academics. 
-                    They are prepared for the challenges of a full-time position within any organization, 
-                    providing more insight into the specific topic. 
-                </p>
-                <p class=""style="font-weight: 500;" >
-                    <i class='bx bx-right-arrow-alt'></i>   It has become a requirement for even entry-level jobs to have some industry experience in today's world. 
-                    Employers can be convinced that a candidate is an asset to their company if they see they have made the 
-                    best use of their time learning and building skills, as it allows them to cope with the new environment 
-                    quickly and to establish connections with industry leaders and professionals without delay. Upon gaining 
-                    appropriate experience, students can not only list the duties and tasks that they performed, but also 
-                    describe them in a thoughtful, honest, and specific manner to interviewers.
-                </p>
+                
                 <div class="button">
 					<button  class="btn"  id="btn1" onclick="MoreLess()">Read More</button>
 				</div>
-            </span>
+            </span> -->
         
             
 		</div>
@@ -754,72 +742,7 @@
             </p>
         </div>
     </section>
-    <!-- ABOUT -->
-    <!-- <section id="about">
-        <div class="container p-3">
-            <div class="row justify-content-center">
-                
-                    <div class="row">
-                        <h4 class="mb-4">Additional Benefits</h4> 
-
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="info-box">
-                                <img src="static/img/web.png" alt="">
-                                <div class="ms-4">
-                                    <h5>Web Development</h5>
-                                    <p>Ensures that you are prepared to ace the interview. As part of our interview preparation, 
-                                        we work on your presentation skills, body language, and other factors that help you land that dream job. 
-                                    </p> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="info-box">
-                                <img src="static/img/webhost.png" alt="">
-                                <div class="ms-4">
-                                    <h5>Web Hosting</h5>
-                                     <p>Writing, speaking, and reading are only a few ways to communicate. As well as having an 
-                                        appreciation for other cultures, it is also important to have an understanding and 
-                                        appreciation for different business methods. Business or personal connections can be 
-                                        built more effectively with good language skills. 
-                                    </p> 
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="info-box">
-                                <img src="static/img/digitalmarket.png" alt="">
-                                <div class="ms-4">
-                                    <h5>Digital Marketing </h5>
-                                    <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
-                                        his or her weaknesses by using it wisely and properly. 
-                                        It makes you feel good, gives you a positive outlook on life and creates a feeling of positivity within you. 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-12">
-                            <div class="info-box">
-                                <img src="static/img/support.png" alt="">
-                                <div class="ms-4">
-                                    <h5>24 x 7 Tech Support </h5>
-                                     <p>Personality refinement aims to polish and refine an individual's traits. Enhances a person's strength and minimizes 
-                                        his or her weaknesses by using it wisely and properly. 
-                                        It makes you feel good, gives you a positive outlook on life and creates a feeling of positivity within you. 
-                                    </p> 
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-            
-                 <div class="col-lg-5">
-                    <img src="static/img/tech1.jpg" alt="">
-                </div> 
-            </div>
-        </div>
-    </section> -->
-
+   
     <style>
         #team .container{
             height: 550px;
@@ -886,128 +809,122 @@
             }  
         }
     </style>
-    <h1 class="text-center mt-3 mb-2">Our Projects</h1>
-    <section id="team" >
-        <div class="container">
-       
+
+
+    <style>
+        .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+          }
+          .mySwiper
+          {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+    
+          .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+           
+          }
+    
+          .swiper-slide img {
+            display: block;
+            width: 100%;
+          }
+          .swiper-slide .pbox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          .swiper-slide .pbox h5{
+            font-size: 20px;
+            margin: 2vh;
+            padding: 10px;
+          }
+          .swiper-slide .pbox .btn{
+            background-color: rgb(53, 200, 53);
+            color: #fff;
+           
+          }
+
+          @media screen and (max-width:932px){
+            .swiper-slide {
+                width: 350px;
+                height: 350px;
+            }
             
-            <div class="owl-theme owl-carousel reviews-slider container p-2" id="content"  >
-                    
-                <div class="container p-3 text-center">
-                    <h5 class="mb-4">CRM</h5>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/crm.png" alt=""></a>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
-                </div>
-                <div class="container p-3 text-center">
-                    <h5 class="mb-4">ERP</h5>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/erp.png" alt=""></a> 
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
-                </div>
-                <div class="container p-3 text-center">
-                    <h5 class="mb-4">HRMS</h5>
-                    <a href="" data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/hrms.png" alt=""></a>
+          }
+        </style>
+
+        <h1 class="text-center mt-3 mb-2">Our Ongoing Projects</h1>
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="static/img/crm.png" alt=""/>
+              <div class="pbox">
+                <h5 class="">CRM</h5>
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
+              </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="static/img/erp.png" alt="" />
+                <div class="pbox">
+                    <h5 class="">ERP</h5>
                     <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
                 </div>
-                <div class="container p-3 text-center">
-                    <h5 class="mb-4">ACCOUNTING</h5>
-                    <a href=""  data-bs-toggle="modal" data-bs-target="#enquerymodal"><img src="static/img/account.png" alt=""></a> 
-                    <button class="btn " data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button>
+            </div>
+            <div class="swiper-slide">
+                <img src="static/img/hrms.png" alt="" />
+                <div class="pbox">
+                    <h5 class="">HRMS</h5>
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
                 </div>
-                
                 
             </div>
-            
-            <!-- <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <h5>On the Job Training</h5>
-                            <p class="p-2">
-                                Understanding the requirements of the new job in 
-                                the most convenient way. In addition to getting 
-                                hands-on experience with new technologies, machinery, 
-                                equipment, tools, materials, etc, and facing the challenges 
-                                that might arise during their work, they also get the chance 
-                                to learn and improve.
-                            </p>
-                             <div class="social-icons">
-                                <a href="#"><i class='bx bxl-facebook'></i></a>
-                                <a href="#"><i class='bx bxl-twitter'></i></a>
-                                <a href="#"><i class='bx bxl-instagram'></i></a>
-                                <a href="#"><i class='bx bxl-pinterest'></i></a>
-                            </div> 
-                            <div class="overlay">
-                               
-                            </div>
-                        </div>
-                    </div>
+            <div class="swiper-slide">
+                <img src="static/img/account.png" alt=""/>
+                <div class="pbox">
+                    <h5 class="">ACCOUNTING</h5>
+                <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
                 </div>
-                <div class="col-lg-3 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <h5>Live Project Experience</h5>
-                            <p class="p-2">
-                                It's always best to focus on learning new things whenever possible. 
-                                Your internship/live project gives you the opportunity to find out what's 
-                                good and what's not. As far as improving your skills professionally is 
-                                concerned, we will look at how to do so.
-                            </p>
-                            <div class="social-icons">
-                                <a href="#"><i class='bx bxl-facebook'></i></a>
-                                <a href="#"><i class='bx bxl-twitter'></i></a>
-                                <a href="#"><i class='bx bxl-instagram'></i></a>
-                                <a href="#"><i class='bx bxl-pinterest'></i></a>
-                            </div> 
-                            <div class="overlay">
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <h5>Expert Trainers</h5>
-                            <p class="p-2">
-                                Our team of experienced professionals comes from MNC companies across 
-                                every industry. They are dedicated and experienced in implementing, 
-                                utilizing and enhancing the candidates' skills.
-                            </p>
-                             <div class="social-icons">
-                                <a href="#"><i class='bx bxl-facebook'></i></a>
-                                <a href="#"><i class='bx bxl-twitter'></i></a>
-                                <a href="#"><i class='bx bxl-instagram'></i></a>
-                                <a href="#"><i class='bx bxl-pinterest'></i></a>
-                            </div> 
-                            <div class="overlay">
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-8">
-                    <div class="team-member">
-                        <div class="image">
-                            <h5>Most Updated Curriculum</h5>
-                            <p class="p-2">
-                                To help them hone the skills needed to succeed in their chosen field, 
-                                we regularly update the most demanding syllabuses and the revised curriculum.
-                            </p>
-                            <div class="social-icons">
-                                <a href="#"><i class='bx bxl-facebook'></i></a>
-                                <a href="#"><i class='bx bxl-twitter'></i></a>
-                                <a href="#"><i class='bx bxl-instagram'></i></a>
-                                <a href="#"><i class='bx bxl-pinterest'></i></a>
-                            </div> 
-                            <div class="overlay">
-                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+                
+            </div>
+  
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-    </section>
+    
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+              rotate: 50,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+            },
+          });
+        </script>
+    
+    
     
    <style>
 

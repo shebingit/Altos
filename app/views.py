@@ -26,7 +26,7 @@ def enquery_send(request):
                     contact=phno,
                     place=locality)
         enq.save()
-        message="Successfully Registered ."
+        message="Our Training Team Will Contact You Soon ."
         return render(request,'User/Training.html',{'message':message})
 
 def project_enquery_send(request):
@@ -40,7 +40,7 @@ def project_enquery_send(request):
                     enq_project='',
                     enq_message=msgs)
     project_enq.save()
-    message="Thank you ! We will respond soon"
+    message="Thank you ! Admin will respond soon"
     return render(request,'User/index.html',{'message':message})
 
 
@@ -54,7 +54,8 @@ def project_enquery_send(request):
 def load_login(request):
     return render(request,'Admin/login.html')
 
-
+def account_password(request):
+    return render(request,'Admin/account_password.html')
 
 def login(request): 
     try:
@@ -96,6 +97,11 @@ def load_dashbord(request):
     enquerys=Enquery.objects.all()
     pro_enquerys=Project_Enquery.objects.all()
     return render(request,'Admin/index.html',{'enquerys':enquerys,'pro_enquerys':pro_enquerys})
+
+
+@login_required(login_url="/load_login")
+def load_addsection(request):
+    return render(request,'Admin/Addsection.html')
 
 def enquery_delete(request,enq_delete_id):
     enquery=Enquery.objects.get(id=enq_delete_id)
