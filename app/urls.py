@@ -30,6 +30,23 @@ urlpatterns =[
     path('enquery_delete/<int:enq_delete_id>',views.enquery_delete,name='enquery_delete'),
     path('projectenq_delete/<int:enqproject_delete_id>',views.projectenq_delete,name='projectenq_delete'),
 
+    #====Add Section=========
+
+    path('add_course',views.add_course,name='add_course'),
+    path('add_project',views.add_project,name='add_project'),
+    path('add_clients',views.add_clients,name='add_clients'),
+
+
+    #=====Delete Section=======
+
+    path('course_delete/<int:coursedelete_id>',views.course_delete,name='course_delete'),
+    path('project_delete/<int:projectdelete_id>',views.project_delete,name='project_delete'), 
+    path('client_delete/<int:clientdelete_id>',views.client_delete,name='client_delete'), 
+
+    #===== Update Section=======
+
+    path('load_update/<int:up_id>/<int:setionid>',views.load_update,name='load_update'),
+    path('updatesetions/<int:updateid>/<int:upsectionid>',views.updatesetions,name='updatesetions'),
 
 
 
@@ -37,6 +54,7 @@ urlpatterns =[
 
     
     path('',views.load_index,name='load_index'),
+    path('load_about',views.load_about,name='load_about'),
     path('training_load',views.training_load,name='training_load'),
     path('mail_send',views.mail_send,name='mail_send'),
     path('enquery_send',views.enquery_send,name='enquery_send'),

@@ -40,6 +40,11 @@
         <div class="title">
             <h4 class="line" style="color:rgb(208, 27, 27);">Why Us</h5>
         </div>
+        <p class=""style="font-weight: 500;">
+            <i class='bx bx-right-arrow-alt'></i>  Having theoretical knowledge is not enough to sustain a newcomer in the industry. 
+            It is essential for students to accomplish real-world experience before they are hired 
+            to work in their fields on real projects in a real environment.
+        </p>
 
         <p class=""style="font-weight: 500;" >
             <i class='bx bx-right-arrow-alt'></i>A company internship from  <b> ALTOS </b>  provides students with valuable insight into 
@@ -51,6 +56,7 @@
             They are prepared for the challenges of a full-time position within any organization, 
             providing more insight into the specific topic. 
         </p>
+        
         <p class=""style="font-weight: 500;" >
             <i class='bx bx-right-arrow-alt'></i>   It has become a requirement for even entry-level jobs to have some industry experience in today's world. 
             Employers can be convinced that a candidate is an asset to their company if they see they have made the 
@@ -76,238 +82,118 @@
             </div>
         </div>
         <div class="row g-2">
+
+        {% for i in courses %}
             <div class="col-md-4">
                 <article class="blog-post">
-                    <img src="static/img/python.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
+                {% if i.course_img %}
+                    <img src="{{i.course_img.url}}" alt="">
+                {% endif %}
+                    <a href="#" class="tag btn btn-brand ms-lg-3"  data-bs-toggle="modal"  data-bs-target="#registermodal">APPLY</a>
                     <div class="content">
                         <!-- <small>01 Dec, 2022</small> -->
-                        <h5>PYTHON</h5>
+                        <h5 style="text-transform: uppercase;">{{i.course_name}}</h5>
                         <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
                             piece of classical Latin literature from</p> -->
                     </div>
                 </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/angular.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>ANGULAR</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
+            </div> 
+
+            <!-- Course Register Modal -->
+
+ <style>
+    @media screen and (max-width:932px)
+     {
+        .modal-body  select{
+            width: 100%;
+          
+       }
+       .modal-body  select option{
+        width: 50%;
+       }
+    }
+ </style>
+
+            <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <div class="modal-content">
+                    
+                    <div class="modal-body p-0">
+                        
+                        <div class="container-fluid">
+                            <div class="close_button text-end">
+                                <button type="button" class="btn-close p-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            
+                            <div class="row gy-4">
+                                
+                                <div class="col-lg-12">
+                                    <form class="p-lg-5 col-12 row g-3" action="{% url 'enquery_send' %}" method="post">
+                                        {% csrf_token %}
+                                        <div>
+                                            <h1 class="mt-3">Course Apply Form</h1>
+                                        <p>Fill the the form and we will get back to you as soon as possible</p>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <label for="courseName" class="form-label">Choose Your Course &nbsp;</label>
+                                            <select class="form-control"style="font-size:14px;" name ="coname">
+                                                <option required></option>
+                                                {% for j in courses %}
+                                                    <option style="font-size:12px ;"  value="{{j.course_name}}" required>{{j.course_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                        
+                                            <label for="userName" class="form-label">Full Name &nbsp;</label>
+                                            <input type="text" class="form-control" name="fname" id="userName"
+                                                aria-describedby="emailHelp"required>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <label for="mail" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" name="emailid"  id="mail"
+                                                aria-describedby="emailHelp"required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="cont" class="form-label">Contact</label>
+                                            <input type="tel" pattern="[6789][0-9]{9}"class="form-control" name="phno" id="cont"
+                                                aria-describedby="emailHelp"required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="loc" class="form-label">Place</label>
+                                            <input type="text" class="form-control" name="place" id="loc"
+                                                aria-describedby="emailHelp"required>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-brand mb-3">Apply</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
+
+                </div>
             </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/project2.jpg" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>ACCOUNTING</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
             </div>
-           
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/node.png" alt="">
-                    <a href="#" class="tag">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>NODE JS</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/flutter.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>FLUTTER</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/3d.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>3D MODELING</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/game.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>GAME DEVELOPMENT</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/ios.jpg" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>IOS DEVELOPMENT</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/xamarin.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>XAMARIN DEVELOPMENT</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/Data-Science.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>DATA SCIENCE</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/dl.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>DEEP LEARNING</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/react.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>REACT</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/net.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>.NET</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/php.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>PHP</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/digital.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>DIGITAL MARKETING</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/vr.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>AUGMENTED REALITY</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/cyber.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>CYBER SECURITY</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/android.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>ANDROID DEVELOPMENT</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="blog-post">
-                    <img src="static/img/ml.png" alt="">
-                    <a href="#" class="tag" data-bs-toggle="modal" data-bs-target="#registermodal" class="btn btn-brand ms-lg-3">APPLY</a>
-                    <div class="content">
-                        <!-- <small>01 Dec, 2022</small> -->
-                        <h5>MACHINE LEARNING</h5>
-                        <!-- <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                            piece of classical Latin literature from</p> -->
-                    </div>
-                </article>
-            </div>
-            
+
+
+        {% endfor %}  
+
         </div>
     </div>
 </section>
 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+{% if  message %}
+<script>
+    swal("{{message}}");
+</script>
+{% endif %}
+
 {% endblock %}
+

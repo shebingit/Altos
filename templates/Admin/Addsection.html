@@ -54,144 +54,490 @@
         width:100%;
         border: 1px solid #fff;
     }
+    table tbody td img{
+        height: 7vh;
+        width: 10vh;
+    }
 
 </style>
 
 
 
+{% if c_name %}
 
-<section id="course">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-head">COURSE ADD SECTION</div>
-                    <div class="card-body">
-                        <form action="#" method="post">
-                            <div class="input-group">
-                                <input type="text" class="p-2 m-2" name="cname" placeholder="Course Name">
-                                <textarea rows="5" class="p-2 m-2" name="cdiscription">Discription of course!</textarea>
-                                <input type="file"class="p-2 m-2" name="cimage">
-                                <div class="btns">
-                                    <button class="btn btn-success" type="submit">Save</button>
+    <section id="course">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">COURSE ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_course' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="cname" placeholder="Course Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="cdiscription" placeholder="Discription of course!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="cimage" accept="course/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
                                 </div>
-                               
-                            </div>
-                        </form>
-                        <table class="table table-striped">
-                            <thead class="table-dark">
-                                <th>Action</th>
-                                <th>No</th>
-                                <th>Course Image</th>
-                                <th>Course Name</th>
-                                <th>Course Discription</th>
-                            </thead>
-                            <tbody >
-                                <tr>
-                                    <td><a href="#"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="#"><i class='bx bx-trash bx-xs p-1'></i></a></td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    </div>
-    
-</section>
-
-<section id="project">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-head">ONGOING PROJECT ADD SECTION</div>
-                    <div class="card-body">
-                        <form action="#" method="post">
-                            <div class="input-group">
-                                <input type="text" class="p-2 m-2" name="pname" placeholder="Project Name">
-                                <textarea rows="5" class="p-2 m-2" name="pdiscription">Discription of Project!</textarea>
-                                <input type="file"class="p-2 m-2" name="pimage">
-                                <div class="btns">
-                                    <button class="btn btn-success" type="submit">Save</button>
-                                </div>
-                               
-                            </div>
-                        </form>
-                        <table class="table table-striped">
-                            <thead class="table-dark">
-                                <th>Action</th>
-                                <th>No</th>
-                                <th>Project Image</th>
-                                <th>Project Name</th>
-                                <th>Project Discription</th>
-                            </thead>
-                            <tbody >
-                                <tr>
-                                    <td><a href="#"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="#"><i class='bx bx-trash bx-xs p-1'></i></a></td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            </form>
+                            <div class="message-box">
+                                {% if c_name %}
+                                    <center>
+                                        <h6>{{c_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
                         
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</section>
-
-<section id="client">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-head">CLIENT ADD SECTION</div>
-                    <div class="card-body">
-                        <form action="#" method="post">
-                            <div class="input-group">
-                                <input type="text" class="p-2 m-2" name="clname" placeholder="Company Name">
-                                <textarea rows="5" class="p-2 m-2" name="cldiscription">Discription of Comapany!</textarea>
-                                <input type="file"class="p-2 m-2" name="clogo">
-                                <div class="btns">
-                                    <button class="btn btn-success" type="submit">Save</button>
-                                </div>
-                               
+                                {% endif %}
                             </div>
-                        </form>
-                        <table class="table table-striped">
-                            <thead class="table-dark">
-                                <th>Action</th>
-                                <th>No</th>
-                                <th>Client Logo</th>
-                                <th>Company Name</th>
-                                <th>Comapany Discription</th>
-                            </thead>
-                            <tbody >
-                                <tr>
-                                    <td><a href="#"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="#"><i class='bx bx-trash bx-xs p-1'></i></a></td>
-                                    <td>1</td>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    
+                            <h5 class="m-3">Course Details</h5>
+                            <table id="example" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Course Image</th>
+                                    <th>Course Name</th>
+                                    <th>Course Discription</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    {% for i in courses %}
+                                        <tr>
+                                            <td><a href="{% url 'load_update' i.id 1 %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'course_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                            <td>{{forloop.counter}}</td>
+                                            {% if i.course_img %}
+                                                <td><img src={{i.course_img.url}}></td>
+                                            {% endif %}
+                                            <td>{{i.course_name}}</td>
+                                            {% if i.course_discr %}
+                                                <td>{{i.course_discr}}</td>
+                                            {% else %}
+                                                <td>No Discription is added.</td>
+                                            {% endif %}
+    
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                <tfoot>
+                                    <tr>
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Course Image</th>
+                                    <th>Course Name</th>
+                                    <th>Course Discription</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+    </section>
+
+{% elif proje_name %}
+
+    <section id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">ONGOING PROJECT ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_project' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="pname" placeholder="Project Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="pdiscription" placeholder="Discription of Project!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="pimage" accept="project/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            <div class="message-box">
+                                {% if proje_name %}
+                                    <center>
+                                        <h6>{{proje_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
+                        
+                                {% endif %}
+                            </div>
+                            <h5 class="m-3">Project Details</h5>
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Project Image</th>
+                                    <th>Project Name</th>
+                                    <th>Project Discription</th>
+                                </thead>
+                                <tbody>
+                                    {% for i in projects %}
+                                        <tr>
+                                            <td><a href="{% url 'load_update' i.id 2 %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'project_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                            <td>{{forloop.counter}}</td>
+                                            {% if i.project_img %}
+                                                <td><img src={{i.project_img.url}}></td>
+                                            {% endif %}
+                                            <td>{{i.project_name}}</td>
+    
+                                            {% if i.project_discr %}
+                                                <td>{{i.project_discr}}</td>
+                                            {% else %}
+                                                <td>No Discription is added.</td>
+                                            {% endif %}
+    
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>No</th>
+                                            <th>Project Image</th>
+                                            <th>Project Name</th>
+                                            <th>Project Discription</th>
+                                        </tr>
+                                    </tfoot>
+                            </table>
+                            
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        
+    </section>
+
+{% elif client_name %}
+
+    <section id="client">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">CLIENT ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_clients' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="clname" placeholder="Company Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="cldiscription" placeholder="Discription of Comapany!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="clogo" accept="client/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            <div class="message-box">
+                                {% if client_name %}
+                                    <center>
+                                        <h6>{{client_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
+                        
+                                {% endif %}
+                            </div>
+                            <h5 class="m-3">Clients Details</h5>
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Client Logo</th>
+                                    <th>Company Name</th>
+                                    <th>Comapany Discription</th>
+                                </thead>
+                                <tbody>
+                                {% for i in clients %}
+                                    <tr>
+                                        <td><a href="{% url 'load_update' i.id 3 %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'client_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                        <td>{{forloop.counter}}</td>
+                                        {% if i.client_logo %}
+                                            <td><img src={{i.client_logo.url}}></td>
+                                        {% endif %}
+                                        <td>{{i.client_name}}</td>
+
+                                        {% if i.client_discr %}
+                                            <td>{{i.client_discr}}</td>
+                                        {% else %}
+                                            <td>No Discription is added.</td>
+                                        {% endif %}
+
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+{% else %}
+
+    <section id="course">
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">COURSE ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_course' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="cname" placeholder="Course Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="cdiscription" placeholder="Discription of course!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="cimage" accept="course/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            <div class="message-box">
+                                {% if c_name %}
+                                    <center>
+                                        <h6>{{c_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
+                        
+                                {% endif %}
+                            </div>
+                            <h5 class="m-3">Course Details</h5>
+                            
+                            <table id="example" class="table table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Course Image</th>
+                                    <th>Course Name</th>
+                                    <th>Course Discription</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    {% for i in courses %}
+                                        <tr>
+                                            <td><a href="{% url 'load_update' i.id 1 %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'course_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                            <td>{{forloop.counter}}</td>
+                                            {% if i.course_img %}
+                                                <td><img src={{i.course_img.url}}></td>
+                                            {% endif %}
+                                            <td>{{i.course_name}}</td>
+                                            {% if i.course_discr %}
+                                                <td>{{i.course_discr}}</td>
+                                            {% else %}
+                                                <td>No Discription is added.</td>
+                                            {% endif %}
     
-</section>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                <tfoot>
+                                    <tr>
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Course Image</th>
+                                    <th>Course Name</th>
+                                    <th>Course Discription</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        
+    </section>
+
+    <section id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">ONGOING PROJECT ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_project' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="pname" placeholder="Project Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="pdiscription" placeholder="Discription of Project!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="pimage" accept="project/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            <div class="message-box">
+                                {% if proje_name %}
+                                    <center>
+                                        <h6>{{proje_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
+                        
+                                {% endif %}
+                            </div>
+                            <h5 class="m-3">On Going Projects Details</h5>
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Project Image</th>
+                                    <th>Project Name</th>
+                                    <th>Project Discription</th>
+                                </thead>
+                                <tbody>
+                                    {% for i in projects %}
+                                        <tr>
+                                            <td><a href="{% url 'load_update' i.id 2  %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'project_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                            <td>{{forloop.counter}}</td>
+                                            {% if i.project_img %}
+                                                <td><img src={{i.project_img.url}}></td>
+                                            {% endif %}
+                                            <td>{{i.project_name}}</td>
+    
+                                            {% if i.project_discr %}
+                                                <td>{{i.project_discr}}</td>
+                                            {% else %}
+                                                <td>No Discription is added.</td>
+                                            {% endif %}
+    
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>No</th>
+                                            <th>Project Image</th>
+                                            <th>Project Name</th>
+                                            <th>Project Discription</th>
+                                        </tr>
+                                    </tfoot>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="client">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-6 col-sm-12">
+                    <div class="card overflow-auto">
+                        <div class="card-head">CLIENT ADD SECTION</div>
+                        <div class="card-body">
+                            <form action="{% url 'add_clients' %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <input type="text" class="p-2 m-2" name="clname" placeholder="Company Name" required>
+                                    <textarea rows="5" class="p-2 m-2" name="cldiscription" placeholder="Discription of Comapany!"></textarea>
+                                    <input type="file"class="p-2 m-2" name="clogo" accept="client/" required>
+                                    <div class="btns">
+                                        <button class="btn btn-success" type="submit">Save</button>
+                                    </div>
+                                
+                                </div>
+                            </form>
+                            <div class="message-box">
+                                {% if client_name %}
+                                    <center>
+                                        <h6>{{client_name}}<p class="text-success">&nbsp; &nbsp;{{messages}}</p></h6>
+                                    </center>
+                                    
+                        
+                                {% endif %}
+                            </div>
+                            <h5 class="m-3">Clients Details</h5>
+                            <table class="table table-striped">
+                                <thead class="table-dark">
+                                    <th>Action</th>
+                                    <th>No</th>
+                                    <th>Client Logo</th>
+                                    <th>Company Name</th>
+                                    <th>Comapany Discription</th>
+                                </thead>
+                                <tbody>
+                                    {% for i in clients %}
+                                        <tr>
+                                            <td><a href="{% url 'load_update' i.id 3  %}"><i class='bx bx-edit-alt bx-xs p-1'></i></a><a href="{% url 'client_delete' i.id %}"><i class='bx bx-trash bx-xs p-1'></i></a></td>
+                                            <td>{{forloop.counter}}</td>
+                                            {% if i.client_logo %}
+                                                <td><img src={{i.client_logo.url}}></td>
+                                            {% endif %}
+                                            <td>{{i.client_name}}</td>
+    
+                                            {% if i.client_discr %}
+                                                <td>{{i.client_discr}}</td>
+                                            {% else %}
+                                                <td>No Discription is added.</td>
+                                            {% endif %}
+    
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>No</th>
+                                            <th>Client Logo</th>
+                                            <th>Company Name</th>
+                                            <th>Comapany Discription</th>
+                                        </tr>
+                                    </tfoot>
+                            </table>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.colVis.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    var table = $('#example').DataTable( {
+        lengthChange: false,
+        buttons: [ 'copy', 'excel', 'pdf' ]
+    } );
+ 
+    table.buttons().container()
+        .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+} );
+</script>
 {% endblock %}

@@ -13,7 +13,7 @@
 <style>
     .section{
     width: 100%;
-	min-height: 90vh;
+	min-height: 70vh;
 	background-color: rgb(255, 255, 255);
     padding-bottom: 10px;
     }
@@ -22,7 +22,7 @@
 	min-height: 120vh;
 	background-color:rgb(255, 255, 255);
     }
-    #aboutus{
+    .aboutus{
         width: 100%;
         display: block;
         margin:auto;
@@ -166,7 +166,6 @@
     }
 </style>
 
-
     <!-- SLIDER -->
     <div class="owl-carousel owl-theme hero-slider" id="home">
         <div class="slide slide1">
@@ -194,6 +193,8 @@
             </div>
         </div>
     </div>
+
+    
 
     <style>
         .image-section
@@ -261,31 +262,11 @@
                 margin-top: 2vh;
             }
         }
-        #about_section .line
-        {
-            height: 3px;
-          
-        }
-        #about_section .title .line
-        {
-            display: flex;
-          justify-content: center;
-            align-items: center;
-            margin-top: 2vh;
-            font-size:1em;
-            
-        }
-        #about_section .title .line::before
-        {
-            content: '';
-           height: 3px;
-            background-color: rgb(237, 6, 6);
-            display: block;
-        }
+        
     </style>
-
-    <div class="section" id="about_section">
-		<div class="container" id="aboutus">
+<section id="Aboutus">
+    <div class="section aboutus mt-5" >
+		<div class="container" >
 
             <div class="image-section" data-aos="zoom-in-up"data-aos-delay="5000" data-aos-duration="3000">
                 <div class="img1"></div>
@@ -311,11 +292,7 @@
                         build a great career under professionals of multinational companies.
                         
                     </p>
-                        <p>
-                            <i class='bx bx-right-arrow-alt'></i>  Having theoretical knowledge is not enough to sustain a newcomer in the industry. 
-                            It is essential for students to accomplish real-world experience before they are hired 
-                            to work in their fields on real projects in a real environment.
-                        </p><span id="dots"></span>
+                
                   
                         
                    
@@ -342,33 +319,10 @@
             
 		</div>
 	</div>
-    <script>
-        function MoreLess()
-        {
-            console.log("clicked")
-            var dots=document.getElementById("dots");
-            var invisibletext=document.getElementById("invisible-text");
-            var btntext=document.getElementById("btn");
-            var btntext1=document.getElementById("btn1");
-            if(dots.style.display!="none")
-            {
-                dots.style.display="none";
-                invisibletext.style.display="inline";
-                $('#aboutus').addClass('section1')
-                btntext.innerHTML="Read Less";
-                btntext1.innerHTML="Read Less";
-                btntext.style.display="none";
-            }
-            else {
-                $('#aboutus').removeClass('section1')
-                btntext.innerHTML="Read More";
-                btntext1.innerHTML="Read More";
-                invisibletext.style.display="none";
-                dots.style.display="block";
-                btntext.style.display="block";
-              }
-        }
-    </script>
+    
+</section>
+    
+    
     
    
 
@@ -866,37 +820,17 @@
         <!-- Swiper -->
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
+          {% for i in projects %}
             <div class="swiper-slide">
-              <img src="static/img/crm.png" alt=""/>
+            {% if i.project_img %}
+              <img src="{{i.project_img.url}}" alt=""/>
+            {% endif %}
               <div class="pbox">
-                <h5 class="">CRM</h5>
+                <h5 class="">{{i.project_name}}</h5>
                 <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
               </div>
             </div>
-            <div class="swiper-slide">
-                <img src="static/img/erp.png" alt="" />
-                <div class="pbox">
-                    <h5 class="">ERP</h5>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <img src="static/img/hrms.png" alt="" />
-                <div class="pbox">
-                    <h5 class="">HRMS</h5>
-                <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
-                </div>
-                
-            </div>
-            <div class="swiper-slide">
-                <img src="static/img/account.png" alt=""/>
-                <div class="pbox">
-                    <h5 class="">ACCOUNTING</h5>
-                <button class="btn" data-bs-toggle="modal" data-bs-target="#enquerymodal"><span>ENQUIRY</span></button> 
-                </div>
-                
-            </div>
-  
+          {% endfor %}
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -975,43 +909,14 @@
                 </div>
             </div>
             <div class="clientslogo">
+            {% for i in clients %}
                 <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l1.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l2.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l11.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l4.png">
-                </div>
-                <div class="imgbox"  data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l5.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l6.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l7.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l8.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l9.png">
-                </div>
-                <div class="imgbox"data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l10.png">
-                </div>
-                <div class="imgbox"data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
-                    <img src="static/img/l12.png">
-                </div>
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000" data-aos-delay="1000">
-                    <img src="static/img/l13.png">
+                {% if i.client_logo %}   
+                    <img src="{{i.client_logo.url}}">
+                {% endif %}
                 </div>
                 
+            {% endfor %}    
             </div>
         </div>
         
