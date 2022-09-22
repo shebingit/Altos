@@ -13,7 +13,7 @@
 <style>
     .section{
     width: 100%;
-	min-height: 70vh;
+	min-height: 85vh;
 	background-color: rgb(255, 255, 255);
     padding-bottom: 10px;
     }
@@ -381,7 +381,7 @@
   
           <div class="row gy-4">
   
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="count-box">
                 <i class='bx bx-code-alt'style="color:#ee2020;"></i>
                 <div>
@@ -391,7 +391,7 @@
               </div>
             </div>
   
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="count-box">
                 <i class='bx bxs-heart'style="color: #ee2020;" ></i>
                 <div>
@@ -401,7 +401,7 @@
               </div>
             </div>
   
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="count-box">
                 <i class='bx bxs-layer-plus'style="color:#ee2020;"></i>
                 <div>
@@ -411,7 +411,7 @@
               </div>
             </div>
   
-            <div class="col-lg-3 col-md-6">
+            <div class="col-xl-3 col-md-6">
               <div class="count-box">
                 <i class='bx bx-trophy'style="color:#ee2020;"></i>
                 <div>
@@ -871,11 +871,11 @@
     }
     #blog .clientslogo .imgbox
     {
-        flex: 1 1 calc(20% - 10px);
+        flex: 1 1 calc(25% - 10px);
     }
     #blog .clientslogo img{
-        width:35vh;
-        height:35vh;
+        width:32vh;
+        height:32vh;
         
         transition: transform 1s ease-in-out;
     }
@@ -910,9 +910,9 @@
             </div>
             <div class="clientslogo">
             {% for i in clients %}
-                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"data-aos-delay="1000">
+                <div class="imgbox" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000"data-aos-delay="1000">
                 {% if i.client_logo %}   
-                    <img src="{{i.client_logo.url}}">
+                    <img src="{{i.client_logo.url}}" class="image-fuild" style="object-fit:fit;width:30vh;height:30vh;">
                 {% endif %}
                 </div>
                 

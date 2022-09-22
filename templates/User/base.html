@@ -1,11 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-238910742-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-238910742-1');
+  gtag('config', 'G-DC8YW73M5C');
+
+
+</script>
+<meta name="description" content="ALTOS Technologies is a leading Software and Web development company based in Kochi, Kerala."/>
+    
+    <meta property="og:title" content="ALTOS">
+    
+    <meta property="og:url" content="https://altostechnologies.in/">
+    
+    <meta property="og:type" content="website" />
+   
+    <meta property="og:description" content="ALTOS Technologies is a leading Software and Web development company based in Kochi, Kerala.">
 
 <head>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-238910742-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-238910742-1');
+  gtag('config', 'G-DC8YW73M5C');
+
+</script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALTOS Technologies | #1 Web & software development company in Kochi</title>
+<meta name="description" content="OJT training under MNC professionals at the software & web development company in kochi. Python,3d modelling, digital marketing, accounting, xamarin,ar etc"/>
+<meta name="base_url" content="https://altostechnologies.in/" />
+
+<meta property="og:url" content="https://altostechnologies.in/" />
+<meta property="og:type" content="Website" />
+<meta property="og:title" content="Web & software development company in Kochi,KERALA" />
+<meta property="og:description" content="OJT training under MNC professionals at the software & web development company in kochi. Python,3d modelling, digital marketing, accounting, xamarin,ar etc" />
+<meta property="og:image" content="static/img/logo.png" />
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -16,11 +60,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.bootstrap5.min.css">
 
-    <title>ALTOS</title>
     <link href="static/img/logo.png" rel="icon">
 </head>
 
@@ -69,15 +109,7 @@
                         <a class="nav-link" href="{% url 'training_load' %}">Training</a>
                     </li>
                     
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#team">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#reviews">Reviews</a>
-                    </li> -->
+                   
                     
                 </ul>
                 <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-brand ms-lg-3" style="background-color:#000; border:none">Contact</a>
@@ -182,7 +214,7 @@
     }
     .socials a i{
         color: #e7f2f4;
-        padding:8px 10px;
+        padding:10px;
         font-size:20px;
     }
     .socials a:hover{
@@ -262,6 +294,7 @@
                     <li><a href="{% url 'load_index' %}#home"><i class='bx bx-chevron-right'></i>Home</a></li>
                     <li><a href="{% url 'load_about' %}#counts"><i class='bx bx-chevron-right'></i>About Us</a></li>
                     <li><a href="{% url 'training_load' %}"><i class='bx bx-chevron-right'></i>Training</a></li>
+                    <li><a href="{% url 'training_load' %}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class='bx bx-chevron-right'></i>Contact</a></li>
                 </ul>
             </li>
             <li>
@@ -335,9 +368,69 @@
         </div>
     </div>
 
+      <!-- Register Modal -->
 
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      {% if  message %}
+      <script>
+          swal("{{message}}");
+      </script>
+      {% endif %}
 
-     
+      <div class="modal fade" id="registermodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+                
+                <div class="modal-body p-0">
+                    
+                    <div class="container-fluid">
+                        <div class="close_button text-end">
+                            <button type="button" class="btn-close p-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                      
+                        <div class="row gy-4">
+                            
+                            <div class="col-lg-12">
+                                <form class="p-lg-5 col-12 row g-3" action="{% url 'enquery_send' %}" method="post">
+                                    {% csrf_token %}
+                                    <div>
+                                        <h1 class="mt-3">Course Apply Form</h1>
+                                    <p>Fill the the form and we will get back to you as soon as possible</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <label for="userName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" name="fname" id="userName"
+                                            aria-describedby="emailHelp"required>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <label for="mail" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" name="emailid"  id="mail"
+                                            aria-describedby="emailHelp"required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="cont" class="form-label">Contact</label>
+                                        <input type="tel" pattern="[6789][0-9]{9}"class="form-control" name="phno" id="cont"
+                                            aria-describedby="emailHelp"required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="loc" class="form-label">Place</label>
+                                        <input type="text" class="form-control" name="place" id="loc"
+                                            aria-describedby="emailHelp"required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand mb-3">Apply</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Enquery Form-->
 

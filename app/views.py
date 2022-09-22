@@ -14,7 +14,9 @@ def load_index(request):
     return render(request,'User/index.html',{'projects':projects,'clients':clients})
 
 def load_about(request):
-    return render(request,'User/index.html')
+    clients=Clients.objects.all()
+    projects=OnProjects.objects.all()
+    return render(request,'User/index.html',{'projects':projects,'clients':clients})
 
 
 def training_load(request):
@@ -197,35 +199,62 @@ def add_clients(request):
 
 def load_update(request,up_id, setionid):
     if setionid == 1:
-        if request.method=="POST":
-            data=Courses.objects.get(id=up_id)
-            data.course_name=request.POST.get('cname')
-            data.course_discr=request.POST.get('cdiscription')
-            data.course_img=request.FILES.get('cimage')
-           
-            value=1
+        data=Courses.objects.get(id=up_id)
+        value=1
     elif  setionid == 2:
-        if request.method=="POST":
-            data=OnProjects.objects.get(id=up_id)
-            value=2
+        data=OnProjects.objects.get(id=up_id)
+        value=2
     else:
-        if request.method=="POST":
-            data=Clients.objects.get(id=up_id)
-            value=3
+        data=Clients.objects.get(id=up_id)
+        value=3
 
     return render(request,'Admin/Updatesection.html',{'data':data,'value':value})
+
+
 
 def updatesetions(request,updateid, upsectionid):
 
     if upsectionid == 1:
+        if request.method=="POST":
+            data=Courses.objects.get(id=updateid)
+            data.course_name=request.POST.get('cname')
+            data.course_discr=request.POST.get('cdiscription')
+            img=request.FILES.get('cimage')
+            if(img):
+                data.course_img=img
+            else:
+                data.course_img=data.course_img
+            data.save()
+            return redirect('load_addsection')
         
-        data=Courses.objects.get(id=updateid)
         
     elif  upsectionid == 2:
+        if request.method=="POST":
+            data=OnProjects.objects.get(id=updateid)
+            data.project_name=request.POST.get('pname')
+            data.project_discr=request.POST.get('pdiscription')
+            img=request.FILES.get('pimage')
+            if(img):
+               data.project_img=img
+            else:
+               data.project_img=data.project_img
+            data.save()
+            return redirect('load_addsection')
 
-        data=OnProjects.objects.get(id=updateid)
+      
     else:
-        data=Clients.objects.get(id=updateid)
+        if request.method=="POST":
+            data=Clients.objects.get(id=updateid)
+            data.client_name=request.POST.get('clname')
+            data.client_discr=request.POST.get('cldiscription')
+            img=request.FILES.get('clogo')
+            if(img):
+              data.client_logo=img
+            else:
+              data.client_logo=data.client_logo
+            data.save()
+            return redirect('load_addsection')
+       
 
 
 #admin side delete section 
