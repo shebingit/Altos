@@ -141,16 +141,16 @@ section {
     box-shadow: var(--shadow);
 }
 .navbar img{
-    width: 80px !important;
-    height: 80px;
+    width: 27vh !important;
+    height: 75px;
     /* border-radius: 100px; */
     margin: auto;
 }
 @media(max-width:921px)
 {
     .navbar img{
-        width: 60px !important;
-        height: 60px;
+        width: 27vh !important;
+        height: 75px;
         /* border-radius: 100px; */
         margin: auto;
     }
@@ -190,6 +190,7 @@ section {
     font-size: 28px;
     font-weight: 700;
 }
+
 
 .navbar-brand .dot {
     color: var(--brand);
