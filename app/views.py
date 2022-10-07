@@ -6,6 +6,10 @@ from .models import *
 
 
 
+# 404 Page not found
+def handle_not_found(request,exception):
+    return render(request,'User/PageNotFound.html')
+
 #Home Section
 
 def load_index(request):
